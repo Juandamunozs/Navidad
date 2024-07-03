@@ -56,3 +56,5 @@ const mostrarFecha = () => {
 };
 
 const intervalo = setInterval(mostrarFecha, 1000);
+
+console.log("Ahi vamos K")
