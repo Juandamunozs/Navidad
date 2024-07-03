@@ -1,0 +1,39 @@
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/026/304/994/small_2x/outdoor-christmas-decorations-and-a-beautifully-decorated-christmas-tree-ai-generated-photo.jpg');
+    background-size: cover; /* Para asegurar que la imagen cubra todo el fondo */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+    background-position: center center; /* Centra la imagen en el fondo */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fuente de texto */
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/026/304/994/small_2x/outdoor-christmas-decorations-and-a-beautifully-decorated-christmas-tree-ai-generated-photo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#fecha-hora {
+    margin-top: 20px;
+}
+
+#fecha-hora p {
+    margin: 5px;
+}
+
+#fecha-hora p span {
+    font-weight: bold;
+}
