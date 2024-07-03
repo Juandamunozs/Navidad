@@ -33,6 +33,13 @@ body {
     border-radius: 10px;
 }
 
+.container-anionuevo {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
 #fecha-hora {
     margin-top: 20px;
 }
