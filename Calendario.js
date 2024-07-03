@@ -22,7 +22,7 @@ const segundo_nuevo = document.getElementById("segundo_nuevo");
 const mostrarFecha = () => {
     const fecha_actual = new Date();
     const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
-    const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2024
+    const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2025
 
     const año_actual = fecha_actual.getFullYear();
     const mes_actual = fecha_actual.getMonth() + 1; // Meses van de 0 a 11, sumamos 1 para mostrar correctamente
