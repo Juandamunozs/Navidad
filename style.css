@@ -19,7 +19,14 @@ body {
     height: 100vh;
 }
 
-.container {
+.container-actual {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container-navidad {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     padding: 20px;
