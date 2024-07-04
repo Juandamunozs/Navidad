@@ -44,29 +44,29 @@ const segundo_party = document.getElementById("segundo_party");
 
 function meses(mes_actual) {
   const meses = [
-      { indice: 1, mes: "enero" },
-      { indice: 2, mes: "febrero" },
-      { indice: 3, mes: "marzo" },
-      { indice: 4, mes: "abril" },
-      { indice: 5, mes: "mayo" },
-      { indice: 6, mes: "junio" },
-      { indice: 7, mes: "julio" },
-      { indice: 8, mes: "agosto" },
-      { indice: 9, mes: "septiembre" },
-      { indice: 10, mes: "octubre" },
-      { indice: 11, mes: "noviembre" },
-      { indice: 12, mes: "diciembre" }
+    { indice: 1,  mes: "Enero" },
+    { indice: 2,  mes: "Mebrero" },
+    { indice: 3,  mes: "Marzo" },
+    { indice: 4,  mes: "Abril" },
+    { indice: 5,  mes: "Mayo" },
+    { indice: 6,  mes: "Junio" },
+    { indice: 7,  mes: "Julio" },
+    { indice: 8,  mes: "Agosto" },
+    { indice: 9,  mes: "Septiembre" },
+    { indice: 10, mes: "Octubre" },
+    { indice: 11, mes: "Noviembre" },
+    { indice: 12, mes: "Diciembre" }
   ];
 
-  let nombreMes = "";
+  let mes_text = "";
 
-  meses.forEach((mes) => {
-      if (mes_actual === mes.indice) {
-          nombreMes = mes.mes;
-      }
+  meses.forEach((month_now) => {
+    if (mes_actual === month_now.indice) {
+      mes_text = month_now.mes;
+    }
   });
 
-  return nombreMes;
+  return mes_text;
 }
 
 const mostrarFecha = () => {
@@ -76,6 +76,7 @@ const mostrarFecha = () => {
   const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2025
   const fecha_party = new Date(fecha_actual.getFullYear() + 1, 0, 2); // 2 de enero del año 2025
   const fecha_love = new Date(fecha_actual.getFullYear(), 9, 4); // 4 de octubre del año actual
+  const born = new Date(2024, 6, 3, 16, 0); // 3 de julio del año 2024 a las 16:00
 
   const año_actual = fecha_actual.getFullYear();
   const mes_actual = fecha_actual.getMonth() + 1; // Meses van de 0 a 11, sumamos 1 para mostrar correctamente
@@ -83,6 +84,9 @@ const mostrarFecha = () => {
   const hora_actual = fecha_actual.getHours();
   const minuto_actual = fecha_actual.getMinutes();
   const segundo_actual = fecha_actual.getSeconds();
+
+  //diferencia en segundos de la web creada 
+  const diferencia_ms = fecha_actual - born;
 
   // Mostrar fecha actual
   anio.innerText = año_actual;
@@ -130,25 +134,25 @@ const mostrarFecha = () => {
   minutos_restantes_halloween %= 60;
   segundos_restantes_halloween %= 60;
 
-   // Convirtiendo la diferencia a días, horas, minutos y segundos
-   let segundos_restantes_love = Math.floor(diferencia_love / 1000);
-   let minutos_restantes_love = Math.floor(segundos_restantes_love / 60);
-   let horas_restantes_love = Math.floor(minutos_restantes_love / 60);
-   const dias_restantes_love = Math.floor(horas_restantes_love / 24);
- 
-   horas_restantes_love %= 24;
-   minutos_restantes_love %= 60;
-   segundos_restantes_love %= 60;
+  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  let segundos_restantes_love = Math.floor(diferencia_love / 1000);
+  let minutos_restantes_love = Math.floor(segundos_restantes_love / 60);
+  let horas_restantes_love = Math.floor(minutos_restantes_love / 60);
+  const dias_restantes_love = Math.floor(horas_restantes_love / 24);
 
-    // Convirtiendo la diferencia a días, horas, minutos y segundos
-    let segundos_restantes_party = Math.floor(diferencia_party / 1000);
-    let minutos_restantes_party = Math.floor(segundos_restantes_party / 60);
-    let horas_restantes_party = Math.floor(minutos_restantes_party / 60);
-    const dias_restantes_party = Math.floor(horas_restantes_party / 24);
-  
-    horas_restantes_party %= 24;
-    minutos_restantes_party %= 60;
-    segundos_restantes_party %= 60;
+  horas_restantes_love %= 24;
+  minutos_restantes_love %= 60;
+  segundos_restantes_love %= 60;
+
+  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  let segundos_restantes_party = Math.floor(diferencia_party / 1000);
+  let minutos_restantes_party = Math.floor(segundos_restantes_party / 60);
+  let horas_restantes_party = Math.floor(minutos_restantes_party / 60);
+  const dias_restantes_party = Math.floor(horas_restantes_party / 24);
+
+  horas_restantes_party %= 24;
+  minutos_restantes_party %= 60;
+  segundos_restantes_party %= 60;
 
   // Mostrar el tiempo restante para Navidad
   anio_navidad.innerText = "Christmas"; // Año de la próxima Navidad (es el mismo que el actual)
@@ -175,7 +179,7 @@ const mostrarFecha = () => {
   segundo_halloween.innerText = segundos_restantes_halloween;
 
 
-// Mostrar el tiempo restante para love
+  // Mostrar el tiempo restante para love
   anio_love.innerText = "HB"; // Año de la próxima HB love (es el mismo que el actual)
   mes_love.innerText = 10 - mes_actual; // Diciembre es el mes 12
   dia_love.innerText = dias_restantes_love;
@@ -191,23 +195,44 @@ const mostrarFecha = () => {
   minuto_party.innerText = minutos_restantes_party;
   segundo_party.innerText = segundos_restantes_party;
 
-  if(mes_actual == 10 && dia_actual == 3){
+  if (mes_actual == 10 && dia_actual == 3) {
     mensaje.innerText = "¡Feliz cumpleaños 👩‍❤️‍💋‍👨 !"
-  }else if(mes_actual == 10 && dia_actual == 31){
+  } else if (mes_actual == 10 && dia_actual == 31) {
     mensaje.innerText = "¡Halloween 👻🎃!"
-  }else if(mes_actual == 12 && dia_actual == 25){
+  } else if (mes_actual == 12 && dia_actual == 25) {
     mensaje.innerText = "¡Feliz navidad 🎅🎄!"
-  }else if(mes_actual == 1 && dia_actual == 1){
+  } else if (mes_actual == 1 && dia_actual == 1) {
     mensaje.innerText = "¡Feliz año nuevo " + año_actual + " 🎇!"
-  }else if (mes_actual == 1 && dia_actual == 2){
-   mensaje.innerText = "Llego el dia"
-  }else{
-   mensaje.innerText = ""
+  } else if (mes_actual == 1 && dia_actual == 2) {
+    mensaje.innerText = "Llego el dia"
+  } else {
+    mensaje.innerText = ""
   }
 
+   // Calcular años, meses, días, horas, minutos y segundos
+   let segundos_totales_born = Math.floor(diferencia_ms / 1000);
+
+   let anios_born = Math.floor(segundos_totales_born / 31536000);
+   segundos_totales_born %= 31536000;
+
+   let meses_born = Math.floor(segundos_totales_born / 2592000);
+   segundos_totales_born %= 2592000;
+
+   let dias_born = Math.floor(segundos_totales_born / 86400);
+   segundos_totales_born %= 86400;
+
+   let horas_born = Math.floor(segundos_totales_born / 3600);
+   segundos_totales_born %= 3600;
+
+   let minutos_born = Math.floor(segundos_totales_born / 60);
+   segundos_totales_born %= 60;
+
+   let segundos_born = segundos_totales_born;
+
+  console.log(`Creado hace ${anios_born} años, ${meses_born} meses, ${dias_born} dias, ${horas_born} horas, ${minutos_born} minutos, ${segundos_born} segundos`);
 };
 
 const intervalo = setInterval(mostrarFecha, 1000);
 
-console.log("Ahi vamos K");
+
 
