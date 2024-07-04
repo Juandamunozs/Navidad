@@ -19,9 +19,17 @@ const hora_nuevo = document.getElementById("hora_nuevo");
 const minuto_nuevo = document.getElementById("minuto_nuevo");
 const segundo_nuevo = document.getElementById("segundo_nuevo");
 
+const anio_halloween = document.getElementById("anio_halloween");
+const mes_halloween = document.getElementById("mes_halloween");
+const dia_halloween = document.getElementById("dia_halloween");
+const hora_halloween = document.getElementById("hora_halloween");
+const minuto_halloween = document.getElementById("minuto_halloween");
+const segundo_halloween = document.getElementById("segundo__halloween");
+
 const mostrarFecha = () => {
     const fecha_actual = new Date();
     const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
+    const fecha_halloween = new Date(fecha_actual.getFullYear(), 9, 31); // 31 de octubre del año actual
     const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2025
 
     const año_actual = fecha_actual.getFullYear();
@@ -43,8 +51,8 @@ const mostrarFecha = () => {
     // Calculando la diferencia en milisegundos
     const diferencia_navidad = fecha_navidad - fecha_actual;
     const diferencia_newyear = fecha_anio_nuevo - fecha_actual;
+    const diferencia_halloween = fecha_halloween - fecha_actual;
 
-    //console.log(diferencia_newyear);
 
     // Convirtiendo la diferencia a días, horas, minutos y segundos
     let segundos_restantes_navidad = Math.floor(diferencia_navidad / 1000);
@@ -66,6 +74,15 @@ const mostrarFecha = () => {
     minutos_restantes_newyear %= 60;
     segundos_restantes_newyear %= 60;
 
+    // Convirtiendo la diferencia a días, horas, minutos y segundos
+    let segundos_restantes_halloween = Math.floor(diferencia_halloween  / 1000);
+    let minutos_restantes_halloween  = Math.floor(segundos_restantes_halloween  / 60);
+    let horas_restantes_halloween  = Math.floor(minutos_restantes_halloween  / 60);
+    const dias_restantes_halloween  = Math.floor(horas_restantes_halloween  / 24);
+
+    horas_restantes_halloween  %= 24;
+    minutos_restantes_halloween  %= 60;
+    segundos_restantes_halloween  %= 60;
 
     // Mostrar el tiempo restante para Navidad
     anio_navidad.innerText = año_actual - año_actual; // Año de la próxima Navidad (es el mismo que el actual)
@@ -82,6 +99,14 @@ const mostrarFecha = () => {
     hora_nuevo.innerText = horas_restantes_newyear;
     minuto_nuevo.innerText = minutos_restantes_newyear;
     segundo_nuevo.innerText = segundos_restantes_newyear;  
+
+    // Mostrar el tiempo restante para año nuevo
+    anio_halloween.innerText = año_actual - año_actual; // Año de la próxima halloween (es el mismo que el actual)
+    mes_halloween.innerText = 10 - mes_actual; // Diciembre es el mes 12
+    dia_halloween.innerText = dias_restantes_halloween;
+    hora_halloween.innerText = horas_restantes_halloween;
+    minuto_halloween.innerText = minutos_restantes_halloween;
+    segundo_halloween.innerText = segundos_restantes_halloween; 
 };
 
 const intervalo = setInterval(mostrarFecha, 1000);

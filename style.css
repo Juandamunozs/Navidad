@@ -26,6 +26,13 @@ body {
     border-radius: 10px;
 }
 
+.container-halloween {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+}
+
 .container-navidad {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
@@ -54,12 +61,14 @@ body {
 
 .container-actual,
 .container-navidad,
+.container-halloween,
 .container-anionuevo {
     margin-bottom: 20px; /* Ajusta según el espacio deseado entre los bloques */
 }
 
 .container-actual,
 .container-navidad,
+.container-halloween,
 .container-anionuevo {
     padding: 20px; /* Ajusta según el espacio deseado alrededor de cada contenedor */
 }
