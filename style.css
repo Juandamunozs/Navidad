@@ -144,3 +144,17 @@ body {
     transform: scale(1.1); /* Ejemplo: escalar el elemento al 110% cuando se hace hover */
     box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Ejemplo: sombra azul cuando se hace hover */
 }
+
+H1{
+    color: rgb(94, 36, 230);
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(56, 17, 230);
+}
+
+.H1:hover {
+    border-color: #ffbb33; /* Color del borde al hacer hover */
+    background-color: rgba(255, 187, 51, 0.3); /* Fondo con transparencia al hacer hover */
+    color: #ffbb33; /* Color del texto al hacer hover */
+    transform: translateY(-5px); /* Desplazamiento hacia arriba al hacer hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+}

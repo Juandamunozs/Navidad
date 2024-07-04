@@ -1,3 +1,5 @@
+const mensaje = document.getElementById("mensaje");
+
 const anio = document.getElementById("anio");
 const mes = document.getElementById("mes");
 const dia = document.getElementById("dia");
@@ -161,6 +163,20 @@ const mostrarFecha = () => {
   hora_party.innerText = horas_restantes_party;
   minuto_party.innerText = minutos_restantes_party;
   segundo_party.innerText = segundos_restantes_party;
+
+  if(mes_actual == 10 && dia_actual == 3){
+    mensaje.innerText = "¡Feliz cumpleaños 👩‍❤️‍💋‍👨 !"
+  }else if(mes_actual == 10 && dia_actual == 31){
+    mensaje.innerText = "¡Halloween 👻🎃!"
+  }else if(mes_actual == 12 && dia_actual == 25){
+    mensaje.innerText = "¡Feliz navidad 🎅🎄!"
+  }else if(mes_actual == 1 && dia_actual == 1){
+    mensaje.innerText = "¡Feliz año nuevo " + año_actual + " 🎇!"
+  }else if (mes_actual == 1 && dia_actual == 2){
+   mensaje.innerText = "Llego el dia"
+  }else{
+   mensaje.innerText = ""
+  }
 
 };
 
