@@ -24,7 +24,7 @@ const mes_halloween = document.getElementById("mes_halloween");
 const dia_halloween = document.getElementById("dia_halloween");
 const hora_halloween = document.getElementById("hora_halloween");
 const minuto_halloween = document.getElementById("minuto_halloween");
-const segundo_halloween = document.getElementById("segundo__halloween");
+const segundo_halloween = document.getElementById("segundo_halloween");
 
 const mostrarFecha = () => {
     const fecha_actual = new Date();

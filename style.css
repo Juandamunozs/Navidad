@@ -24,6 +24,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid rgb(48, 102, 219);
 }
 
 .container-halloween {
@@ -31,6 +32,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid rgb(230, 144, 17);
 }
 
 .container-navidad {
@@ -38,6 +40,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid rgb(28, 212, 245);
 }
 
 .container-anionuevo {
@@ -45,6 +48,7 @@ body {
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
     padding: 20px;
     border-radius: 10px;
+    border: 2px solid rgb(125, 180, 24);
 }
 
 #fecha-hora {
