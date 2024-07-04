@@ -19,6 +19,7 @@ body {
     justify-content: center; /* Centra los contenedores horizontalmente */
     gap: 20px; /* Espacio entre los contenedores */
     max-width: 80%; /* Ancho máximo del contenedor principal */
+    /*border: 2px solid rgb(23, 109, 207);*/
 }
 
 .container > div {
@@ -68,8 +69,36 @@ body {
     margin: 10px; /* Ajusta el margen entre los contenedores */
     max-width: 80%; /* Limita el ancho máximo de los contenedores */
     width: 300px; /* Ancho inicial de los contenedores */
+}
+
+.container-actual {
     border: 2px solid rgb(150, 12, 192); /* Color del borde al hacer hover */
 }
+
+.container-love {
+    border: 2px solid rgb(255, 0, 0); /* Color del borde al hacer hover */
+}
+
+.container-halloween {
+    border: 2px solid rgb(255, 165, 0); /* Color del borde al hacer hover */
+}
+
+.container-navidad {
+    border: 2px solid rgb(0, 128, 0); /* Color del borde al hacer hover */
+}
+
+.container-anionuevo {
+    border: 2px solid rgb(0, 0, 255); /* Color del borde al hacer hover */
+}
+
+.container-party {
+    border: 2px solid rgb(187, 206, 19); /* Color del borde al hacer hover */
+}
+
+.container-graduation {
+    border: 2px solid rgb(0, 0, 0); /* Color del borde al hacer hover */
+}
+
 
 #tex-actual {
     color: #0000ff;
@@ -88,3 +117,11 @@ body {
     transform: scale(1.1); /* Escalar el elemento al 110% cuando se hace hover */
     box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Sombra más pronunciada al hacer hover */
 }
+
+#mensage-header {
+    background-color: #0000ff;
+    text-align: center;
+    color: rgba(43, 190, 216, 0.466);
+    margin: 20px 0; /* Añadir margen arriba y abajo para separarlo del contenido */
+}
+
