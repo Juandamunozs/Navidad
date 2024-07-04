@@ -68,7 +68,8 @@ body {
 .container-navidad,
 .container-anionuevo,
 .container-party,
-.container-graduation {
+.container-graduation,
+.container-san-valentin {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -116,6 +117,11 @@ body {
     /* Color del borde al hacer hover */
 }
 
+.container-san-valentin{
+    border: 2px solid rgb(218, 17, 134);
+    /* Color del borde al hacer hover */
+}
+
 
 #tex-actual {
     color: #1885df;
@@ -127,7 +133,8 @@ body {
 .container-navidad:hover,
 .container-anionuevo:hover,
 .container-party:hover,
-.container-graduation:hover {
+.container-graduation:hover,
+.container-san-valentin:hover {
     border: 2px solid blue;
     /* Color del borde al hacer hover */
     background-color: rgba(0, 0, 255, 0.1);

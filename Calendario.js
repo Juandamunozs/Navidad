@@ -59,6 +59,14 @@ const hora_graduation = document.getElementById("hora_graduation");
 const minuto_graduation = document.getElementById("minuto_graduation");
 const segundo_graduation = document.getElementById("segundo_graduation");
 
+//Recibir datos de san valentin de html a js
+const anio_san_valentin = document.getElementById("san_valentin");
+const mes_san_valentin = document.getElementById("mes_san_valentin");
+const dia_san_valentin = document.getElementById("dia_san_valentin");
+const hora_san_valentin = document.getElementById("hora_san_valentin");
+const minuto_san_valentin = document.getElementById("minuto_san_valentin");
+const segundo_san_valentin = document.getElementById("segundo_san_valentin");
+
 //Funcion donde trasformo el mes en numero a mes en texto
 
 function meses(mes_actual) {
@@ -122,6 +130,7 @@ const mostrarFecha = () => {
   //Fechas de destino o donde ocurre el evento
   const fecha_actual = new Date();
   const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
+  const fecha_valentin = new Date(fecha_actual.getFullYear(), 8, 21); // 21 de septiembre del año actual
   const fecha_halloween = new Date(fecha_actual.getFullYear(), 9, 31); // 31 de octubre del año actual
   const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2025
   const fecha_party = new Date(fecha_actual.getFullYear() + 1, 0, 2); // 2 de enero del año 2025
@@ -157,6 +166,7 @@ const mostrarFecha = () => {
   const diferencia_party = fecha_party - fecha_actual;
   const diferencia_ms = fecha_actual - born;
   const diferencia_graduation = fecha_graduation - fecha_actual;
+  const diferencia_san_valentin = fecha_valentin - fecha_actual;
 
   // Convirtiendo la diferencia a días, horas, minutos y segundos de navidad
   let segundos_restantes_navidad = Math.floor(diferencia_navidad / 1000);
@@ -218,6 +228,16 @@ const mostrarFecha = () => {
   minutos_restantes_party %= 60;
   segundos_restantes_party %= 60;
 
+    // Convirtiendo la diferencia a días, horas, minutos y segundos de party 2 de enero
+    let segundos_restantes_san_valentin = Math.floor(diferencia_san_valentin / 1000);
+    let minutos_restantes_san_valentin = Math.floor(segundos_restantes_san_valentin / 60);
+    let horas_restantes_san_valentin = Math.floor(minutos_restantes_san_valentin / 60);
+    const dias_restantes_san_valentin = Math.floor(horas_restantes_san_valentin / 24);
+  
+    horas_restantes_san_valentin %= 24;
+    minutos_restantes_san_valentin %= 60;
+    segundos_restantes_san_valentin %= 60;
+
   //Enviar datos de js a html de navidad
   anio_navidad.innerText = "Christmas en:"; // Año de la próxima Navidad (es el mismo que el actual)
   mes_navidad.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
@@ -266,6 +286,14 @@ const mostrarFecha = () => {
   hora_graduation.innerText = horas_restantes_graduation + " horas";
   minuto_graduation.innerText = minutos_restantes_graduation + " minutos";
   segundo_graduation.innerText = segundos_restantes_graduation + " segundos";
+
+   //Enviar datos de js a html de san valentin
+   anio_san_valentin.innerText = "Amor y amistad en:"; // Año de la próxima graduation (es el mismo que el actual)
+   mes_san_valentin.innerText = 9 - mes_actual + " meses"; // Diciembre es el mes 12
+   dia_san_valentin.innerText = dias_restantes_san_valentin + " dias";
+   hora_san_valentin.innerText = horas_restantes_san_valentin + " horas";
+   minuto_san_valentin.innerText = minutos_restantes_san_valentin + " minutos";
+   segundo_san_valentin.innerText = segundos_restantes_san_valentin + " segundos";
 
   //Mensaje para el dia en que ocurre el evento
   if (mes_actual == 10 && dia_actual == 3) {
