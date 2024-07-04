@@ -239,7 +239,7 @@ const mostrarFecha = () => {
 
   // Mostrar el tiempo restante para party
   anio_party.innerText = "Village en:"; // Año de la próxima party (es el mismo que el actual)
-  mes_party.innerText = 13 - mes_actual+ " meses"; // Diciembre es el mes 12
+  mes_party.innerText = 12 - mes_actual+ " meses"; // Diciembre es el mes 12
   dia_party.innerText = dias_restantes_party+ " dias";
   hora_party.innerText = horas_restantes_party+ " horas";
   minuto_party.innerText = minutos_restantes_party+ " minutos";
