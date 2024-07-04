@@ -175,53 +175,53 @@ const mostrarFecha = () => {
   segundos_restantes_party %= 60;
 
   // Mostrar el tiempo restante para Navidad
-  anio_navidad.innerText = "Christmas"; // Año de la próxima Navidad (es el mismo que el actual)
-  mes_navidad.innerText = 12 - mes_actual; // Diciembre es el mes 12
-  dia_navidad.innerText = dias_restantes_navidad;
-  hora_navidad.innerText = horas_restantes_navidad;
-  minuto_navidad.innerText = minutos_restantes_navidad;
-  segundo_navidad.innerText = segundos_restantes_navidad;
+  anio_navidad.innerText = "Christmas en:"; // Año de la próxima Navidad (es el mismo que el actual)
+  mes_navidad.innerText = 12 - mes_actual+ " meses"; // Diciembre es el mes 12
+  dia_navidad.innerText = dias_restantes_navidad+ " dias";
+  hora_navidad.innerText = horas_restantes_navidad+ " horas";
+  minuto_navidad.innerText = minutos_restantes_navidad+ " minutos";
+  segundo_navidad.innerText = segundos_restantes_navidad+ " segundos";
 
   // Mostrar el tiempo restante para año nuevo
-  anio_nuevo.innerText = "New Year"; // Año de la próxima Navidad (es el mismo que el actual)
-  mes_nuevo.innerText = 12 - mes_actual; // Diciembre es el mes 12
-  dia_nuevo.innerText = dias_restantes_newyear;
-  hora_nuevo.innerText = horas_restantes_newyear;
-  minuto_nuevo.innerText = minutos_restantes_newyear;
-  segundo_nuevo.innerText = segundos_restantes_newyear;
+  anio_nuevo.innerText = "New Year en:"; // Año de la próxima Navidad (es el mismo que el actual)
+  mes_nuevo.innerText = 12 - mes_actual+ " meses"; // Diciembre es el mes 12
+  dia_nuevo.innerText = dias_restantes_newyear+ " dias";
+  hora_nuevo.innerText = horas_restantes_newyear+ " horas";
+  minuto_nuevo.innerText = minutos_restantes_newyear+ " minutos";
+  segundo_nuevo.innerText = segundos_restantes_newyear+ " segundos";
 
   // Mostrar el tiempo restante para halloween
-  anio_halloween.innerText = "Halloween"; // Año de la próxima halloween (es el mismo que el actual)
-  mes_halloween.innerText = 10 - mes_actual; // Diciembre es el mes 12
-  dia_halloween.innerText = dias_restantes_halloween;
-  hora_halloween.innerText = horas_restantes_halloween;
-  minuto_halloween.innerText = minutos_restantes_halloween;
-  segundo_halloween.innerText = segundos_restantes_halloween;
+  anio_halloween.innerText = "Halloween en:"; // Año de la próxima halloween (es el mismo que el actual)
+  mes_halloween.innerText = 10 - mes_actual+ " meses"; // Diciembre es el mes 12
+  dia_halloween.innerText = dias_restantes_halloween+ " dias";
+  hora_halloween.innerText = horas_restantes_halloween+ " horas";
+  minuto_halloween.innerText = minutos_restantes_halloween+ " minutos";
+  segundo_halloween.innerText = segundos_restantes_halloween+ " segundos";
 
 
   // Mostrar el tiempo restante para love
-  anio_love.innerText = "HB"; // Año de la próxima HB love (es el mismo que el actual)
-  mes_love.innerText = 10 - mes_actual; // Diciembre es el mes 12
-  dia_love.innerText = dias_restantes_love;
-  hora_love.innerText = horas_restantes_love;
-  minuto_love.innerText = minutos_restantes_love;
-  segundo_love.innerText = segundos_restantes_love;
+  anio_love.innerText = "HB en:"; // Año de la próxima HB love (es el mismo que el actual)
+  mes_love.innerText = 10 - mes_actual + " meses"; // Diciembre es el mes 12
+  dia_love.innerText = dias_restantes_love  + " dias";
+  hora_love.innerText = horas_restantes_love + " horas";
+  minuto_love.innerText = minutos_restantes_love + " minutos";
+  segundo_love.innerText = segundos_restantes_love + " segundos";
 
   // Mostrar el tiempo restante para party
-  anio_party.innerText = "Village"; // Año de la próxima party (es el mismo que el actual)
-  mes_party.innerText = 13 - mes_actual; // Diciembre es el mes 12
-  dia_party.innerText = dias_restantes_party;
-  hora_party.innerText = horas_restantes_party;
-  minuto_party.innerText = minutos_restantes_party;
-  segundo_party.innerText = segundos_restantes_party;
+  anio_party.innerText = "Village en:"; // Año de la próxima party (es el mismo que el actual)
+  mes_party.innerText = 13 - mes_actual+ " meses"; // Diciembre es el mes 12
+  dia_party.innerText = dias_restantes_party+ " dias";
+  hora_party.innerText = horas_restantes_party+ " horas";
+  minuto_party.innerText = minutos_restantes_party+ " minutos";
+  segundo_party.innerText = segundos_restantes_party+ " segundos";
 
   // Mostrar el tiempo restante para graduation
-  anio_graduation.innerText = "Pensum"; // Año de la próxima graduation (es el mismo que el actual)
-  mes_graduation.innerText = 13 - mes_actual; // Diciembre es el mes 12
-  dia_graduation.innerText = dias_restantes_graduation;
-  hora_graduation.innerText = horas_restantes_graduation;
-  minuto_graduation.innerText = minutos_restantes_graduation;
-  segundo_graduation.innerText = segundos_restantes_graduation;
+  anio_graduation.innerText = "Pensum en:"; // Año de la próxima graduation (es el mismo que el actual)
+  mes_graduation.innerText = 13 - mes_actual+ " meses"; // Diciembre es el mes 12
+  dia_graduation.innerText = dias_restantes_graduation+ " dias";
+  hora_graduation.innerText = horas_restantes_graduation+ " horas";
+  minuto_graduation.innerText = minutos_restantes_graduation+ " minutos";
+  segundo_graduation.innerText = segundos_restantes_graduation+ " segundos";
 
   if (mes_actual == 10 && dia_actual == 3) {
     mensaje.innerText = "¡Feliz cumpleaños 👩‍❤️‍💋‍👨 !"
