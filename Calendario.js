@@ -76,6 +76,33 @@ function meses(mes_actual) {
   return mes_text;
 }
 
+function hora_formato(mes_actual) {
+  const hora = [
+    { indice: 12, hour: "12" },
+    { indice: 13, hour: "1" },
+    { indice: 14, hour: "2" },
+    { indice: 15, hour: "3" },
+    { indice: 16, hour: "4" },
+    { indice: 17, hour: "5" },
+    { indice: 18, hour: "6" },
+    { indice: 19, hour: "7" },
+    { indice: 10, hour: "8" },
+    { indice: 21, hour: "9" },
+    { indice: 22, hour: "10" },
+    { indice: 23, hour: "11" }
+  ];
+
+  let hour_text = "";
+
+  hora.forEach((hour_now) => {
+    if (hour_now === hour_now.indice) {
+      hour_text = month_now.hour;
+    }
+  });
+
+  return hour_text;
+}
+
 const mostrarFecha = () => {
   const fecha_actual = new Date();
   const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
@@ -100,7 +127,11 @@ const mostrarFecha = () => {
   anio.innerText = año_actual;
   mes.innerText = meses(mes_actual);
   dia.innerText = dia_actual;
-  hora.innerText = hora_actual;
+  if(hora_actual<12){
+    hora.innerText = hora_actual + " AM";
+  }else{
+    hora.innerText = mostrarFecha(hora_actual) + " PM";
+  }
   minuto.innerText = minuto_actual;
   segundo.innerText = segundo_actual;
 
