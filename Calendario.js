@@ -26,89 +26,117 @@ const hora_halloween = document.getElementById("hora_halloween");
 const minuto_halloween = document.getElementById("minuto_halloween");
 const segundo_halloween = document.getElementById("segundo_halloween");
 
+const anio_love = document.getElementById("anio_love");
+const mes_love = document.getElementById("mes_love");
+const dia_love = document.getElementById("dia_love");
+const hora_love = document.getElementById("hora_love");
+const minuto_love = document.getElementById("minuto_love");
+const segundo_love = document.getElementById("segundo_love");
+
 const mostrarFecha = () => {
-    const fecha_actual = new Date();
-    const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
-    const fecha_halloween = new Date(fecha_actual.getFullYear(), 9, 31); // 31 de octubre del año actual
-    const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2025
+  const fecha_actual = new Date();
+  const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
+  const fecha_halloween = new Date(fecha_actual.getFullYear(), 9, 31); // 31 de octubre del año actual
+  const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2025
+  const fecha_love = new Date(fecha_actual.getFullYear(), 9, 4); // 4 de octubre del año actual
 
-    const año_actual = fecha_actual.getFullYear();
-    const mes_actual = fecha_actual.getMonth() + 1; // Meses van de 0 a 11, sumamos 1 para mostrar correctamente
-    const dia_actual = fecha_actual.getDate(); // Obtener el día del mes
-    const hora_actual = fecha_actual.getHours();
-    const minuto_actual = fecha_actual.getMinutes();
-    const segundo_actual = fecha_actual.getSeconds();
-  
-    // Mostrar fecha actual
-    anio.innerText = año_actual;
-    mes.innerText = mes_actual;
-    dia.innerText = dia_actual;
-    hora.innerText = hora_actual;
-    minuto.innerText = minuto_actual;
-    segundo.innerText = segundo_actual;
-    
-    // Calcular tiempo restante para Navidad
-    // Calculando la diferencia en milisegundos
-    const diferencia_navidad = fecha_navidad - fecha_actual;
-    const diferencia_newyear = fecha_anio_nuevo - fecha_actual;
-    const diferencia_halloween = fecha_halloween - fecha_actual;
+  const año_actual = fecha_actual.getFullYear();
+  const mes_actual = fecha_actual.getMonth() + 1; // Meses van de 0 a 11, sumamos 1 para mostrar correctamente
+  const dia_actual = fecha_actual.getDate(); // Obtener el día del mes
+  const hora_actual = fecha_actual.getHours();
+  const minuto_actual = fecha_actual.getMinutes();
+  const segundo_actual = fecha_actual.getSeconds();
+
+  // Mostrar fecha actual
+  anio.innerText = año_actual;
+  mes.innerText = mes_actual;
+  dia.innerText = dia_actual;
+  hora.innerText = hora_actual;
+  minuto.innerText = minuto_actual;
+  segundo.innerText = segundo_actual;
+
+  // Calcular tiempo restante para Navidad
+  // Calculando la diferencia en milisegundos
+  const diferencia_navidad = fecha_navidad - fecha_actual;
+  const diferencia_newyear = fecha_anio_nuevo - fecha_actual;
+  const diferencia_halloween = fecha_halloween - fecha_actual;
+  const diferencia_love = fecha_love - fecha_actual;
+
+  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  let segundos_restantes_navidad = Math.floor(diferencia_navidad / 1000);
+  let minutos_restantes_navidad = Math.floor(segundos_restantes_navidad / 60);
+  let horas_restantes_navidad = Math.floor(minutos_restantes_navidad / 60);
+  const dias_restantes_navidad = Math.floor(horas_restantes_navidad / 24);
+
+  horas_restantes_navidad %= 24;
+  minutos_restantes_navidad %= 60;
+  segundos_restantes_navidad %= 60;
+
+  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  let segundos_restantes_newyear = Math.floor(diferencia_newyear / 1000);
+  let minutos_restantes_newyear = Math.floor(segundos_restantes_newyear / 60);
+  let horas_restantes_newyear = Math.floor(minutos_restantes_newyear / 60);
+  const dias_restantes_newyear = Math.floor(horas_restantes_newyear / 24);
+
+  horas_restantes_newyear %= 24;
+  minutos_restantes_newyear %= 60;
+  segundos_restantes_newyear %= 60;
+
+  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  let segundos_restantes_halloween = Math.floor(diferencia_halloween / 1000);
+  let minutos_restantes_halloween = Math.floor(segundos_restantes_halloween / 60);
+  let horas_restantes_halloween = Math.floor(minutos_restantes_halloween / 60);
+  const dias_restantes_halloween = Math.floor(horas_restantes_halloween / 24);
+
+  horas_restantes_halloween %= 24;
+  minutos_restantes_halloween %= 60;
+  segundos_restantes_halloween %= 60;
+
+   // Convirtiendo la diferencia a días, horas, minutos y segundos
+   let segundos_restantes_love = Math.floor(diferencia_love / 1000);
+   let minutos_restantes_love = Math.floor(segundos_restantes_love / 60);
+   let horas_restantes_love = Math.floor(minutos_restantes_love / 60);
+   const dias_restantes_love = Math.floor(horas_restantes_love / 24);
+ 
+   horas_restantes_love %= 24;
+   minutos_restantes_love %= 60;
+   segundos_restantes_love%= 60;
+
+  // Mostrar el tiempo restante para Navidad
+  anio_navidad.innerText = año_actual - año_actual; // Año de la próxima Navidad (es el mismo que el actual)
+  mes_navidad.innerText = 12 - mes_actual; // Diciembre es el mes 12
+  dia_navidad.innerText = dias_restantes_navidad;
+  hora_navidad.innerText = horas_restantes_navidad;
+  minuto_navidad.innerText = minutos_restantes_navidad;
+  segundo_navidad.innerText = segundos_restantes_navidad;
+
+  // Mostrar el tiempo restante para año nuevo
+  anio_nuevo.innerText = año_actual - año_actual; // Año de la próxima Navidad (es el mismo que el actual)
+  mes_nuevo.innerText = 12 - mes_actual; // Diciembre es el mes 12
+  dia_nuevo.innerText = dias_restantes_newyear;
+  hora_nuevo.innerText = horas_restantes_newyear;
+  minuto_nuevo.innerText = minutos_restantes_newyear;
+  segundo_nuevo.innerText = segundos_restantes_newyear;
+
+  // Mostrar el tiempo restante para halloween
+  anio_halloween.innerText = año_actual - año_actual; // Año de la próxima halloween (es el mismo que el actual)
+  mes_halloween.innerText = 10 - mes_actual; // Diciembre es el mes 12
+  dia_halloween.innerText = dias_restantes_halloween;
+  hora_halloween.innerText = horas_restantes_halloween;
+  minuto_halloween.innerText = minutos_restantes_halloween;
+  segundo_halloween.innerText = segundos_restantes_halloween;
 
 
-    // Convirtiendo la diferencia a días, horas, minutos y segundos
-    let segundos_restantes_navidad = Math.floor(diferencia_navidad / 1000);
-    let minutos_restantes_navidad = Math.floor(segundos_restantes_navidad / 60);
-    let horas_restantes_navidad = Math.floor(minutos_restantes_navidad / 60);
-    const dias_restantes_navidad = Math.floor(horas_restantes_navidad / 24);
+// Mostrar el tiempo restante para love
+  anio_love.innerText = año_actual - año_actual; // Año de la próxima halloween (es el mismo que el actual)
+  mes_love.innerText = 10 - mes_actual; // Diciembre es el mes 12
+  dia_love.innerText = dias_restantes_love;
+  hora_love.innerText = horas_restantes_love;
+  minuto_love.innerText = minutos_restantes_love
+  segundo_love.innerText = segundos_restantes_love;
 
-    horas_restantes_navidad %= 24;
-    minutos_restantes_navidad %= 60;
-    segundos_restantes_navidad %= 60;
-
-// Convirtiendo la diferencia a días, horas, minutos y segundos
-    let segundos_restantes_newyear = Math.floor(diferencia_newyear / 1000);
-    let minutos_restantes_newyear = Math.floor(segundos_restantes_newyear / 60);
-    let horas_restantes_newyear = Math.floor(minutos_restantes_newyear / 60);
-    const dias_restantes_newyear = Math.floor(horas_restantes_newyear / 24);
-
-    horas_restantes_newyear %= 24;
-    minutos_restantes_newyear %= 60;
-    segundos_restantes_newyear %= 60;
-
-    // Convirtiendo la diferencia a días, horas, minutos y segundos
-    let segundos_restantes_halloween = Math.floor(diferencia_halloween  / 1000);
-    let minutos_restantes_halloween  = Math.floor(segundos_restantes_halloween  / 60);
-    let horas_restantes_halloween  = Math.floor(minutos_restantes_halloween  / 60);
-    const dias_restantes_halloween  = Math.floor(horas_restantes_halloween  / 24);
-
-    horas_restantes_halloween  %= 24;
-    minutos_restantes_halloween  %= 60;
-    segundos_restantes_halloween  %= 60;
-
-    // Mostrar el tiempo restante para Navidad
-    anio_navidad.innerText = año_actual - año_actual; // Año de la próxima Navidad (es el mismo que el actual)
-    mes_navidad.innerText = 12 - mes_actual; // Diciembre es el mes 12
-    dia_navidad.innerText = dias_restantes_navidad;
-    hora_navidad.innerText = horas_restantes_navidad;
-    minuto_navidad.innerText = minutos_restantes_navidad;
-    segundo_navidad.innerText = segundos_restantes_navidad;  
-
-    // Mostrar el tiempo restante para año nuevo
-    anio_nuevo.innerText = año_actual - año_actual; // Año de la próxima Navidad (es el mismo que el actual)
-    mes_nuevo.innerText = 12 - mes_actual; // Diciembre es el mes 12
-    dia_nuevo.innerText = dias_restantes_newyear;
-    hora_nuevo.innerText = horas_restantes_newyear;
-    minuto_nuevo.innerText = minutos_restantes_newyear;
-    segundo_nuevo.innerText = segundos_restantes_newyear;  
-
-    // Mostrar el tiempo restante para año nuevo
-    anio_halloween.innerText = año_actual - año_actual; // Año de la próxima halloween (es el mismo que el actual)
-    mes_halloween.innerText = 10 - mes_actual; // Diciembre es el mes 12
-    dia_halloween.innerText = dias_restantes_halloween;
-    hora_halloween.innerText = horas_restantes_halloween;
-    minuto_halloween.innerText = minutos_restantes_halloween;
-    segundo_halloween.innerText = segundos_restantes_halloween; 
 };
 
 const intervalo = setInterval(mostrarFecha, 1000);
 
-console.log("Ahi vamos K")
+console.log("Ahi vamos K");
