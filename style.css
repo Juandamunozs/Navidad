@@ -51,3 +51,15 @@ body {
 #fecha-hora p span {
     font-weight: bold;
 }
+
+.container-actual,
+.container-navidad,
+.container-anionuevo {
+    margin-bottom: 20px; /* Ajusta según el espacio deseado entre los bloques */
+}
+
+.container-actual,
+.container-navidad,
+.container-anionuevo {
+    padding: 20px; /* Ajusta según el espacio deseado alrededor de cada contenedor */
+}
