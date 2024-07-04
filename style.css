@@ -154,3 +154,8 @@ body {
     margin: 20px 0;
     /* Añadir margen arriba y abajo para separarlo del contenido */
 }
+
+.name_event {
+    color: purple;
+    font-weight: bold;
+}
