@@ -1,7 +1,9 @@
 //Recibir los elementos del html a javascript
 
+//Mensaje de evento 
 const mensaje = document.getElementById("mensage-header");
 
+//Recibir datos de fecha actual de html a js
 const anio = document.getElementById("anio");
 const mes = document.getElementById("mes");
 const dia = document.getElementById("dia");
@@ -9,6 +11,7 @@ const hora = document.getElementById("hora");
 const minuto = document.getElementById("minuto");
 const segundo = document.getElementById("segundo");
 
+//Recibir datos de navidad de html a js
 const anio_navidad = document.getElementById("anio_navidad");
 const mes_navidad = document.getElementById("mes_navidad");
 const dia_navidad = document.getElementById("dia_navidad");
@@ -16,6 +19,7 @@ const hora_navidad = document.getElementById("hora_navidad");
 const minuto_navidad = document.getElementById("minuto_navidad");
 const segundo_navidad = document.getElementById("segundo_navidad");
 
+//Recibir datos de año nuevo de html a js
 const anio_nuevo = document.getElementById("anio_nuevo");
 const mes_nuevo = document.getElementById("mes_nuevo");
 const dia_nuevo = document.getElementById("dia_nuevo");
@@ -23,6 +27,7 @@ const hora_nuevo = document.getElementById("hora_nuevo");
 const minuto_nuevo = document.getElementById("minuto_nuevo");
 const segundo_nuevo = document.getElementById("segundo_nuevo");
 
+//Recibir datos de halloween de html a js
 const anio_halloween = document.getElementById("anio_halloween");
 const mes_halloween = document.getElementById("mes_halloween");
 const dia_halloween = document.getElementById("dia_halloween");
@@ -30,6 +35,7 @@ const hora_halloween = document.getElementById("hora_halloween");
 const minuto_halloween = document.getElementById("minuto_halloween");
 const segundo_halloween = document.getElementById("segundo_halloween");
 
+//Recibir datos de hbk de html a js
 const anio_love = document.getElementById("anio_love");
 const mes_love = document.getElementById("mes_love");
 const dia_love = document.getElementById("dia_love");
@@ -37,6 +43,7 @@ const hora_love = document.getElementById("hora_love");
 const minuto_love = document.getElementById("minuto_love");
 const segundo_love = document.getElementById("segundo_love");
 
+//Recibir datos de party de html a js
 const anio_party = document.getElementById("anio_party");
 const mes_party = document.getElementById("mes_party");
 const dia_party = document.getElementById("dia_party");
@@ -44,6 +51,7 @@ const hora_party = document.getElementById("hora_party");
 const minuto_party = document.getElementById("minuto_party");
 const segundo_party = document.getElementById("segundo_party");
 
+//Recibir datos de graduación de html a js
 const anio_graduation = document.getElementById("anio_graduation");
 const mes_graduation = document.getElementById("mes_graduation");
 const dia_graduation = document.getElementById("dia_graduation");
@@ -129,7 +137,7 @@ const mostrarFecha = () => {
   const minuto_actual = fecha_actual.getMinutes(); // Obtener el minuto actual
   const segundo_actual = fecha_actual.getSeconds(); // Obtener el segundo actual
 
-  // Mostrar fecha actual en el html
+  //Enviar datos de js a html de la fecha actual
   anio.innerText = año_actual;
   mes.innerText = meses(mes_actual);
   dia.innerText = dia_actual;
@@ -141,7 +149,7 @@ const mostrarFecha = () => {
   minuto.innerText = minuto_actual;
   segundo.innerText = segundo_actual;
 
-  // Calcular tiempo restante para Navidad en milisegundos
+  // Calcular tiempo restante para cada evento en milisegundos
   const diferencia_navidad = fecha_navidad - fecha_actual;
   const diferencia_newyear = fecha_anio_nuevo - fecha_actual;
   const diferencia_halloween = fecha_halloween - fecha_actual;
@@ -210,7 +218,7 @@ const mostrarFecha = () => {
   minutos_restantes_party %= 60;
   segundos_restantes_party %= 60;
 
-  // Mostrar el tiempo restante para Navidad
+  //Enviar datos de js a html de navidad
   anio_navidad.innerText = "Christmas en:"; // Año de la próxima Navidad (es el mismo que el actual)
   mes_navidad.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
   dia_navidad.innerText = dias_restantes_navidad + " dias";
@@ -218,7 +226,7 @@ const mostrarFecha = () => {
   minuto_navidad.innerText = minutos_restantes_navidad + " minutos";
   segundo_navidad.innerText = segundos_restantes_navidad + " segundos";
 
-  // Mostrar el tiempo restante para año nuevo
+ //Enviar datos de js a html del nuevo año
   anio_nuevo.innerText = "New Year en:"; // Año de la próxima Navidad (es el mismo que el actual)
   mes_nuevo.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
   dia_nuevo.innerText = dias_restantes_newyear + " dias";
@@ -226,7 +234,7 @@ const mostrarFecha = () => {
   minuto_nuevo.innerText = minutos_restantes_newyear + " minutos";
   segundo_nuevo.innerText = segundos_restantes_newyear + " segundos";
 
-  // Mostrar el tiempo restante para halloween
+  //Enviar datos de js a html de halloween
   anio_halloween.innerText = "Halloween en:"; // Año de la próxima halloween (es el mismo que el actual)
   mes_halloween.innerText = 10 - mes_actual + " meses"; // Diciembre es el mes 12
   dia_halloween.innerText = dias_restantes_halloween + " dias";
@@ -235,7 +243,7 @@ const mostrarFecha = () => {
   segundo_halloween.innerText = segundos_restantes_halloween + " segundos";
 
 
-  // Mostrar el tiempo restante para hbk
+//Enviar datos de js a html de hbk
   anio_love.innerText = "HB en:"; // Año de la próxima HB love (es el mismo que el actual)
   mes_love.innerText = 10 - mes_actual + " meses"; // Diciembre es el mes 12
   dia_love.innerText = dias_restantes_love + " dias";
@@ -243,7 +251,7 @@ const mostrarFecha = () => {
   minuto_love.innerText = minutos_restantes_love + " minutos";
   segundo_love.innerText = segundos_restantes_love + " segundos";
 
-  // Mostrar el tiempo restante para party
+  //Enviar datos de js a html de party
   anio_party.innerText = "Village en:"; // Año de la próxima party (es el mismo que el actual)
   mes_party.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
   dia_party.innerText = dias_restantes_party + " dias";
@@ -251,7 +259,7 @@ const mostrarFecha = () => {
   minuto_party.innerText = minutos_restantes_party + " minutos";
   segundo_party.innerText = segundos_restantes_party + " segundos";
 
-  // Mostrar el tiempo restante para graduation
+  //Enviar datos de js a html de graduation
   anio_graduation.innerText = "Pensum en:"; // Año de la próxima graduation (es el mismo que el actual)
   mes_graduation.innerText = 11 - mes_actual + " meses"; // Diciembre es el mes 12
   dia_graduation.innerText = dias_restantes_graduation + " dias";
@@ -273,7 +281,7 @@ const mostrarFecha = () => {
   } else if (mes_actual == 11 && dia_actual == 20 && hora_actual >= 21) {
     mensaje.innerText = "Acabe pensum 🎓"
   } else {
-    mensaje.innerText = "k"
+    mensaje.innerText = ""
   }
 
   // Calcular años, meses, días, horas, minutos y segundos por consola
