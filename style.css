@@ -77,6 +77,15 @@ body {
     border: 2px solid rgb(218, 68, 8);
 }
 
+.container-graduation {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(14, 118, 214);
+}
+
 #fecha-hora {
     margin-top: 20px;
 }
@@ -94,7 +103,8 @@ body {
 .container-halloween,
 .container-love,
 .container-party,
-.container-anionuevo {
+.container-anionuevo,
+.container-graduation {
     margin-bottom: 20px;
     /* Ajusta según el espacio deseado entre los bloques */
 }
@@ -104,7 +114,8 @@ body {
 .container-halloween,
 .container-love,
 .container-party,
-.container-anionuevo {
+.container-anionuevo,
+.container-graduation {
     padding: 20px;
     /* Ajusta según el espacio deseado alrededor de cada contenedor */
 }
@@ -175,6 +186,19 @@ body {
 }
 
 .container-anionuevo:hover {
+    border: 2px solid blue;
+    /* Ejemplo: borde sólido azul cuando se hace hover */
+    background-color: rgba(0, 0, 255, 0.1);
+    /* Ejemplo: fondo con transparencia azul cuando se hace hover */
+    color: #0000ff;
+    /* Ejemplo: texto en azul cuando se hace hover */
+    transform: scale(1.1);
+    /* Ejemplo: escalar el elemento al 110% cuando se hace hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    /* Ejemplo: sombra azul cuando se hace hover */
+}
+
+.container-graduation:hover {
     border: 2px solid blue;
     /* Ejemplo: borde sólido azul cuando se hace hover */
     background-color: rgba(0, 0, 255, 0.1);
