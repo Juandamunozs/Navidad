@@ -1,6 +1,6 @@
 //Recibir los elementos del html a javascript
 
-const mensaje = document.getElementById("mensaje");
+const mensaje = document.getElementById("mensage-header");
 
 const anio = document.getElementById("anio");
 const mes = document.getElementById("mes");
@@ -273,7 +273,7 @@ const mostrarFecha = () => {
   } else if (mes_actual == 11 && dia_actual == 20 && hora_actual >= 21) {
     mensaje.innerText = "Acabe pensum 🎓"
   } else {
-    mensaje.innerText = ""
+    mensaje.innerText = "k"
   }
 
   // Calcular años, meses, días, horas, minutos y segundos por consola
