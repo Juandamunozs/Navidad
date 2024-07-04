@@ -1,10 +1,11 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/12/fondo-pantalla-navidad_4.jpg?tf=3840x');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed; /* Fija la imagen de fondo */
+    background-attachment: fixed;
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,6 +14,7 @@ body {
     height: 100vh;
 }
 
+/* Estilos para todos los contenedores */
 .container-actual,
 .container-love,
 .container-halloween,
@@ -29,10 +31,7 @@ body {
     width: 300px; /* Ancho inicial de los contenedores */
 }
 
-#tex-actual {
-    color: #0000ff;
-}
-
+/* Estilos para el hover de los contenedores */
 .container-actual:hover,
 .container-love:hover,
 .container-halloween:hover,
@@ -47,26 +46,15 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Sombra más pronunciada al hacer hover */
 }
 
-#tex-actual {
-    color: #0000ff;
-}
-
-#fecha-hora {
-    margin-top: 20px;
-}
-
-#fecha-hora p {
-    margin: 5px;
-}
-
-#fecha-hora p span {
-    font-weight: bold;
-}
-
-.H1:hover {
-    border-color: #ffbb33; /* Color del borde al hacer hover */
-    background-color: rgba(255, 187, 51, 0.3); /* Fondo con transparencia al hacer hover */
-    color: #ffbb33; /* Color del texto al hacer hover */
-    transform: translateY(-5px); /* Desplazamiento hacia arriba al hacer hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al hacer hover */
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .container-actual,
+    .container-love,
+    .container-halloween,
+    .container-navidad,
+    .container-anionuevo,
+    .container-party,
+    .container-graduation {
+        width: 90%; /* Ajuste para pantallas más pequeñas */
+    }
 }
