@@ -76,7 +76,7 @@ function meses(mes_actual) {
   return mes_text;
 }
 
-function hora_formato(mes_actual) {
+function hora_formato(hora_actual) {
   const hora = [
     { indice: 12, hour: "12" },
     { indice: 13, hour: "1" },
@@ -95,11 +95,10 @@ function hora_formato(mes_actual) {
   let hour_text = "";
 
   hora.forEach((hour_now) => {
-    if (hour_now === hour_now.indice) {
-      hour_text = month_now.hour;
+    if (hora_actual === hour_now.indice) {
+      hour_text = hour_now.hour;
     }
   });
-
   return hour_text;
 }
 
@@ -130,7 +129,7 @@ const mostrarFecha = () => {
   if(hora_actual<12){
     hora.innerText = hora_actual + " AM";
   }else{
-    hora.innerText = mostrarFecha(hora_actual) + " PM";
+    hora.innerText = hora_formato(hora_actual) + " PM";
   }
   minuto.innerText = minuto_actual;
   segundo.innerText = segundo_actual;
