@@ -42,6 +42,33 @@ const hora_party = document.getElementById("hora_party");
 const minuto_party = document.getElementById("minuto_party");
 const segundo_party = document.getElementById("segundo_party");
 
+function meses(mes_actual) {
+  const meses = [
+      { indice: 1, mes: "enero" },
+      { indice: 2, mes: "febrero" },
+      { indice: 3, mes: "marzo" },
+      { indice: 4, mes: "abril" },
+      { indice: 5, mes: "mayo" },
+      { indice: 6, mes: "junio" },
+      { indice: 7, mes: "julio" },
+      { indice: 8, mes: "agosto" },
+      { indice: 9, mes: "septiembre" },
+      { indice: 10, mes: "octubre" },
+      { indice: 11, mes: "noviembre" },
+      { indice: 12, mes: "diciembre" }
+  ];
+
+  let nombreMes = "";
+
+  meses.forEach((mes) => {
+      if (mes_actual === mes.indice) {
+          nombreMes = mes.mes;
+      }
+  });
+
+  return nombreMes;
+}
+
 const mostrarFecha = () => {
   const fecha_actual = new Date();
   const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
@@ -59,7 +86,7 @@ const mostrarFecha = () => {
 
   // Mostrar fecha actual
   anio.innerText = año_actual;
-  mes.innerText = mes_actual;
+  mes.innerText = meses(mes_actual);
   dia.innerText = dia_actual;
   hora.innerText = hora_actual;
   minuto.innerText = minuto_actual;
@@ -124,7 +151,7 @@ const mostrarFecha = () => {
     segundos_restantes_party %= 60;
 
   // Mostrar el tiempo restante para Navidad
-  anio_navidad.innerText = año_actual - año_actual; // Año de la próxima Navidad (es el mismo que el actual)
+  anio_navidad.innerText = "Christmas"; // Año de la próxima Navidad (es el mismo que el actual)
   mes_navidad.innerText = 12 - mes_actual; // Diciembre es el mes 12
   dia_navidad.innerText = dias_restantes_navidad;
   hora_navidad.innerText = horas_restantes_navidad;
@@ -132,7 +159,7 @@ const mostrarFecha = () => {
   segundo_navidad.innerText = segundos_restantes_navidad;
 
   // Mostrar el tiempo restante para año nuevo
-  anio_nuevo.innerText = año_actual - año_actual; // Año de la próxima Navidad (es el mismo que el actual)
+  anio_nuevo.innerText = "New Year"; // Año de la próxima Navidad (es el mismo que el actual)
   mes_nuevo.innerText = 12 - mes_actual; // Diciembre es el mes 12
   dia_nuevo.innerText = dias_restantes_newyear;
   hora_nuevo.innerText = horas_restantes_newyear;
@@ -140,7 +167,7 @@ const mostrarFecha = () => {
   segundo_nuevo.innerText = segundos_restantes_newyear;
 
   // Mostrar el tiempo restante para halloween
-  anio_halloween.innerText = año_actual - año_actual; // Año de la próxima halloween (es el mismo que el actual)
+  anio_halloween.innerText = "Halloween"; // Año de la próxima halloween (es el mismo que el actual)
   mes_halloween.innerText = 10 - mes_actual; // Diciembre es el mes 12
   dia_halloween.innerText = dias_restantes_halloween;
   hora_halloween.innerText = horas_restantes_halloween;
@@ -149,7 +176,7 @@ const mostrarFecha = () => {
 
 
 // Mostrar el tiempo restante para love
-  anio_love.innerText = año_actual - año_actual; // Año de la próxima HB love (es el mismo que el actual)
+  anio_love.innerText = "HB"; // Año de la próxima HB love (es el mismo que el actual)
   mes_love.innerText = 10 - mes_actual; // Diciembre es el mes 12
   dia_love.innerText = dias_restantes_love;
   hora_love.innerText = horas_restantes_love;
@@ -157,7 +184,7 @@ const mostrarFecha = () => {
   segundo_love.innerText = segundos_restantes_love;
 
   // Mostrar el tiempo restante para party
-  anio_party.innerText = año_actual - año_actual; // Año de la próxima party (es el mismo que el actual)
+  anio_party.innerText = "Village"; // Año de la próxima party (es el mismo que el actual)
   mes_party.innerText = 13 - mes_actual; // Diciembre es el mes 12
   dia_party.innerText = dias_restantes_party;
   hora_party.innerText = horas_restantes_party;
