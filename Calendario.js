@@ -357,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Agrega el EventListener para el clic
   containerAnioNuevo.addEventListener('click', function() {
       // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('Que cada nuevo año traiga consigo renovadas esperanzas, oportunidades ilimitadas y momentos inolvidables. 🎇');
+      alert('Que cada nuevo año traiga consigo renovadas esperanzas, oportunidades ilimitadas y momentos inolvidables 🎇');
   });
 });
 
