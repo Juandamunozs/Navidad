@@ -50,10 +50,10 @@ body {
 .fecha-hora p {
     margin: 5px;
 }
-
+/*
 .fecha-hora p span {
     font-weight: bold;
-}
+}*/
 
 .container-actual,
 .container-love,
