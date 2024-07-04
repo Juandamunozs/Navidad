@@ -59,6 +59,14 @@ body {
     border: 2px solid rgb(125, 180, 24);
 }
 
+.container-party {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(218, 68, 8);
+}
+
 #fecha-hora {
     margin-top: 20px;
 }
@@ -75,6 +83,7 @@ body {
 .container-navidad,
 .container-halloween,
 .container-love,
+.container-party,
 .container-anionuevo {
     margin-bottom: 20px; /* Ajusta según el espacio deseado entre los bloques */
 }
@@ -83,6 +92,7 @@ body {
 .container-navidad,
 .container-halloween,
 .container-love,
+.container-party,
 .container-anionuevo {
     padding: 20px; /* Ajusta según el espacio deseado alrededor de cada contenedor */
 }

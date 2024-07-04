@@ -33,11 +33,19 @@ const hora_love = document.getElementById("hora_love");
 const minuto_love = document.getElementById("minuto_love");
 const segundo_love = document.getElementById("segundo_love");
 
+const anio_party = document.getElementById("anio_party");
+const mes_party = document.getElementById("mes_party");
+const dia_party = document.getElementById("dia_party");
+const hora_party = document.getElementById("hora_party");
+const minuto_party = document.getElementById("minuto_party");
+const segundo_party = document.getElementById("segundo_party");
+
 const mostrarFecha = () => {
   const fecha_actual = new Date();
   const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
   const fecha_halloween = new Date(fecha_actual.getFullYear(), 9, 31); // 31 de octubre del año actual
   const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2025
+  const fecha_party = new Date(fecha_actual.getFullYear() + 1, 0, 2); // 2 de enero del año 2025
   const fecha_love = new Date(fecha_actual.getFullYear(), 9, 4); // 4 de octubre del año actual
 
   const año_actual = fecha_actual.getFullYear();
@@ -61,6 +69,7 @@ const mostrarFecha = () => {
   const diferencia_newyear = fecha_anio_nuevo - fecha_actual;
   const diferencia_halloween = fecha_halloween - fecha_actual;
   const diferencia_love = fecha_love - fecha_actual;
+  const diferencia_party = fecha_party - fecha_actual;
 
   // Convirtiendo la diferencia a días, horas, minutos y segundos
   let segundos_restantes_navidad = Math.floor(diferencia_navidad / 1000);
@@ -100,7 +109,17 @@ const mostrarFecha = () => {
  
    horas_restantes_love %= 24;
    minutos_restantes_love %= 60;
-   segundos_restantes_love%= 60;
+   segundos_restantes_love %= 60;
+
+    // Convirtiendo la diferencia a días, horas, minutos y segundos
+    let segundos_restantes_party = Math.floor(diferencia_party / 1000);
+    let minutos_restantes_party = Math.floor(segundos_restantes_party / 60);
+    let horas_restantes_party = Math.floor(minutos_restantes_party / 60);
+    const dias_restantes_party = Math.floor(horas_restantes_party / 24);
+  
+    horas_restantes_party %= 24;
+    minutos_restantes_party %= 60;
+    segundos_restantes_party %= 60;
 
   // Mostrar el tiempo restante para Navidad
   anio_navidad.innerText = año_actual - año_actual; // Año de la próxima Navidad (es el mismo que el actual)
@@ -128,12 +147,20 @@ const mostrarFecha = () => {
 
 
 // Mostrar el tiempo restante para love
-  anio_love.innerText = año_actual - año_actual; // Año de la próxima halloween (es el mismo que el actual)
+  anio_love.innerText = año_actual - año_actual; // Año de la próxima HB love (es el mismo que el actual)
   mes_love.innerText = 10 - mes_actual; // Diciembre es el mes 12
   dia_love.innerText = dias_restantes_love;
   hora_love.innerText = horas_restantes_love;
-  minuto_love.innerText = minutos_restantes_love
+  minuto_love.innerText = minutos_restantes_love;
   segundo_love.innerText = segundos_restantes_love;
+
+  // Mostrar el tiempo restante para party
+  anio_party.innerText = año_actual - año_actual; // Año de la próxima party (es el mismo que el actual)
+  mes_party.innerText = 13 - mes_actual; // Diciembre es el mes 12
+  dia_party.innerText = dias_restantes_party;
+  hora_party.innerText = horas_restantes_party;
+  minuto_party.innerText = minutos_restantes_party;
+  segundo_party.innerText = segundos_restantes_party;
 
 };
 
