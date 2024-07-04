@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Agrega el EventListener para el clic
   containeractual.addEventListener('click', function() {
       // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('El arte de la vida radica en vivir cada día con propósito y pasión, encontrando belleza en los pequeños momentos ');
+      alert('El arte de la vida radica en vivir cada día con propósito y pasión, encontrando belleza en los pequeños momentos 🕒');
   });
 });
 
@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Agrega el EventListener para el clic
   containerHB.addEventListener('click', function() {
       // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('Un cumpleaños es un recordatorio especial de cuánto brilla una vida cuando se celebra con amor y gratitud ');
+      alert('Un cumpleaños es un recordatorio especial de cuánto brilla una vida cuando se celebra con amor y gratitud 🎂');
   });
 });
 
