@@ -295,4 +295,82 @@ const mostrarFecha = () => {
 const intervalo = setInterval(mostrarFecha, 1000);
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona el contenedor de Navidad
+  var containeractual = document.querySelector('.container-actual');
+  
+  // Agrega el EventListener para el clic
+  containeractual.addEventListener('click', function() {
+      // Alerta cuando se hace clic en el contenedor de Navidad
+      alert('El arte de la vida radica en vivir cada día con propósito y pasión, encontrando belleza en los pequeños momentos ');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona el contenedor de Navidad
+  var containerHB = document.querySelector('.container-love');
+  
+  // Agrega el EventListener para el clic
+  containerHB.addEventListener('click', function() {
+      // Alerta cuando se hace clic en el contenedor de Navidad
+      alert('Un cumpleaños es un recordatorio especial de cuánto brilla una vida cuando se celebra con amor y gratitud ');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona el contenedor de Navidad
+  var containerHalloween = document.querySelector('.container-halloween');
+  
+  // Agrega el EventListener para el clic
+  containerHalloween.addEventListener('click', function() {
+      // Alerta cuando se hace clic en el contenedor de Navidad
+      alert('En Halloween, las sombras cobran vida y los corazones se llenan de misterio y diversión 🎃');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona el contenedor de Navidad
+  var containerGraduation = document.querySelector('.container-graduation');
+  
+  // Agrega el EventListener para el clic
+  containerGraduation.addEventListener('click', function() {
+      // Alerta cuando se hace clic en el contenedor de Navidad
+      alert('El diploma en mano marca el fin de un capítulo, pero el comienzo de un camino lleno de promesas y metas por cumplir 🎓');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona el contenedor de Navidad
+  var containerNavidad = document.querySelector('.container-navidad');
+  
+  // Agrega el EventListener para el clic
+  containerNavidad.addEventListener('click', function() {
+      // Alerta cuando se hace clic en el contenedor de Navidad
+      alert('¡La Navidad trae consigo la magia de la paz y el amor, envolviendo corazones con esperanza y alegría! 🎄');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona el contenedor de Navidad
+  var containerAnioNuevo= document.querySelector('.container-anionuevo');
+  
+  // Agrega el EventListener para el clic
+  containerAnioNuevo.addEventListener('click', function() {
+      // Alerta cuando se hace clic en el contenedor de Navidad
+      alert('Que cada nuevo año traiga consigo renovadas esperanzas, oportunidades ilimitadas y momentos inolvidables. 🎇');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona el contenedor de Navidad
+  var containerParty= document.querySelector('.container-party');
+  
+  // Agrega el EventListener para el clic
+  containerParty.addEventListener('click', function() {
+      // Alerta cuando se hace clic en el contenedor de Navidad
+      alert('El reencuentro trae consigo la felicidad de volver a sentir cercanos a quienes tanto se extrañó 💫');
+  });
+});
+
+
 
