@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://img.freepik.com/fotos-premium/fondos-navidad-gratuitos-alta-calidad-4k-ultra-hd_999195-873.jpg');
+    background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/12/fondo-pantalla-navidad_4.jpg?tf=3840x');
     background-size: cover; /* Para asegurar que la imagen cubra todo el fondo */
     background-repeat: no-repeat; /* Evita que se repita la imagen */
     background-position: center center; /* Centra la imagen en el fondo */
@@ -7,7 +7,7 @@ body {
 
 body {
     font-family: Arial, sans-serif; /* Fuente de texto */
-    background-image: url('https://img.freepik.com/fotos-premium/fondos-navidad-gratuitos-alta-calidad-4k-ultra-hd_999195-873.jpg');
+    background-image: url('https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2019/12/fondo-pantalla-navidad_4.jpg?tf=3840x');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -95,4 +95,52 @@ body {
 .container-party,
 .container-anionuevo {
     padding: 20px; /* Ajusta según el espacio deseado alrededor de cada contenedor */
+}
+
+.container-actual:hover {
+    border: 2px solid blue; /* Ejemplo: borde sólido azul cuando se hace hover */
+    background-color: rgba(0, 0, 255, 0.1); /* Ejemplo: fondo con transparencia azul cuando se hace hover */
+    color: blue; /* Ejemplo: texto en azul cuando se hace hover */
+    transform: scale(1.1); /* Ejemplo: escalar el elemento al 110% cuando se hace hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Ejemplo: sombra azul cuando se hace hover */
+}
+
+.container-love:hover {
+    border: 2px solid blue; /* Ejemplo: borde sólido azul cuando se hace hover */
+    background-color: rgba(0, 0, 255, 0.1); /* Ejemplo: fondo con transparencia azul cuando se hace hover */
+    color: blue; /* Ejemplo: texto en azul cuando se hace hover */
+    transform: scale(1.1); /* Ejemplo: escalar el elemento al 110% cuando se hace hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Ejemplo: sombra azul cuando se hace hover */
+}
+
+.container-navidad:hover {
+    border: 2px solid blue; /* Ejemplo: borde sólido azul cuando se hace hover */
+    background-color: rgba(0, 0, 255, 0.1); /* Ejemplo: fondo con transparencia azul cuando se hace hover */
+    color: blue; /* Ejemplo: texto en azul cuando se hace hover */
+    transform: scale(1.1); /* Ejemplo: escalar el elemento al 110% cuando se hace hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Ejemplo: sombra azul cuando se hace hover */
+}
+
+.container-halloween:hover {
+    border: 2px solid blue; /* Ejemplo: borde sólido azul cuando se hace hover */
+    background-color: rgba(0, 0, 255, 0.1); /* Ejemplo: fondo con transparencia azul cuando se hace hover */
+    color: blue; /* Ejemplo: texto en azul cuando se hace hover */
+    transform: scale(1.1); /* Ejemplo: escalar el elemento al 110% cuando se hace hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Ejemplo: sombra azul cuando se hace hover */
+}
+
+.container-party:hover {
+    border: 2px solid blue; /* Ejemplo: borde sólido azul cuando se hace hover */
+    background-color: rgba(0, 0, 255, 0.1); /* Ejemplo: fondo con transparencia azul cuando se hace hover */
+    color: blue; /* Ejemplo: texto en azul cuando se hace hover */
+    transform: scale(1.1); /* Ejemplo: escalar el elemento al 110% cuando se hace hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Ejemplo: sombra azul cuando se hace hover */
+}
+
+.container-anionuevo:hover {
+    border: 2px solid blue; /* Ejemplo: borde sólido azul cuando se hace hover */
+    background-color: rgba(0, 0, 255, 0.1); /* Ejemplo: fondo con transparencia azul cuando se hace hover */
+    color: blue; /* Ejemplo: texto en azul cuando se hace hover */
+    transform: scale(1.1); /* Ejemplo: escalar el elemento al 110% cuando se hace hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Ejemplo: sombra azul cuando se hace hover */
 }
