@@ -10,27 +10,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Asegura que el cuerpo cubra al menos toda la altura de la ventana */
+    min-height: 100vh;
+    /* Asegura que el cuerpo cubra al menos toda la altura de la ventana */
 }
 
 .container {
     display: flex;
-    flex-wrap: wrap; /* Permite que los contenedores se envuelvan en filas */
-    justify-content: center; /* Centra los contenedores horizontalmente */
-    gap: 20px; /* Espacio entre los contenedores */
-    max-width: 80%; /* Ancho máximo del contenedor principal */
+    flex-wrap: wrap;
+    /* Permite que los contenedores se envuelvan en filas */
+    justify-content: center;
+    /* Centra los contenedores horizontalmente */
+    gap: 20px;
+    /* Espacio entre los contenedores */
+    max-width: 80%;
+    /* Ancho máximo del contenedor principal */
     /*border: 2px solid rgb(23, 109, 207);*/
 }
 
-.container > div {
-    flex: 1 1 300px; /* Distribución flexible de los contenedores */
+.container>div {
+    flex: 1 1 300px;
+    /* Distribución flexible de los contenedores */
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
 }
 
-.container > div:hover {
+.container>div:hover {
     border: 2px solid blue;
     background-color: rgba(0, 0, 255, 0.1);
     color: #0000ff;
@@ -50,6 +56,7 @@ body {
 .fecha-hora p {
     margin: 5px;
 }
+
 /*
 .fecha-hora p span {
     font-weight: bold;
@@ -66,37 +73,47 @@ body {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
-    margin: 10px; /* Ajusta el margen entre los contenedores */
-    max-width: 80%; /* Limita el ancho máximo de los contenedores */
-    width: 300px; /* Ancho inicial de los contenedores */
+    margin: 10px;
+    /* Ajusta el margen entre los contenedores */
+    max-width: 80%;
+    /* Limita el ancho máximo de los contenedores */
+    width: 300px;
+    /* Ancho inicial de los contenedores */
 }
 
 .container-actual {
-    border: 2px solid rgb(150, 12, 192); /* Color del borde al hacer hover */
+    border: 2px solid rgb(150, 12, 192);
+    /* Color del borde al hacer hover */
 }
 
 .container-love {
-    border: 2px solid rgb(255, 0, 0); /* Color del borde al hacer hover */
+    border: 2px solid rgb(255, 0, 0);
+    /* Color del borde al hacer hover */
 }
 
 .container-halloween {
-    border: 2px solid rgb(255, 165, 0); /* Color del borde al hacer hover */
+    border: 2px solid rgb(255, 165, 0);
+    /* Color del borde al hacer hover */
 }
 
 .container-navidad {
-    border: 2px solid rgb(0, 128, 0); /* Color del borde al hacer hover */
+    border: 2px solid rgb(0, 128, 0);
+    /* Color del borde al hacer hover */
 }
 
 .container-anionuevo {
-    border: 2px solid rgb(0, 0, 255); /* Color del borde al hacer hover */
+    border: 2px solid rgb(0, 0, 255);
+    /* Color del borde al hacer hover */
 }
 
 .container-party {
-    border: 2px solid rgb(187, 206, 19); /* Color del borde al hacer hover */
+    border: 2px solid rgb(187, 206, 19);
+    /* Color del borde al hacer hover */
 }
 
 .container-graduation {
-    border: 2px solid rgb(0, 0, 0); /* Color del borde al hacer hover */
+    border: 2px solid rgb(0, 0, 0);
+    /* Color del borde al hacer hover */
 }
 
 
@@ -111,17 +128,22 @@ body {
 .container-anionuevo:hover,
 .container-party:hover,
 .container-graduation:hover {
-    border: 2px solid blue; /* Color del borde al hacer hover */
-    background-color: rgba(0, 0, 255, 0.1); /* Fondo con transparencia al hacer hover */
-    color: #0000ff; /* Color del texto al hacer hover */
-    transform: scale(1.1); /* Escalar el elemento al 110% cuando se hace hover */
-    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* Sombra más pronunciada al hacer hover */
+    border: 2px solid blue;
+    /* Color del borde al hacer hover */
+    background-color: rgba(0, 0, 255, 0.1);
+    /* Fondo con transparencia al hacer hover */
+    color: #0000ff;
+    /* Color del texto al hacer hover */
+    transform: scale(1.1);
+    /* Escalar el elemento al 110% cuando se hace hover */
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    /* Sombra más pronunciada al hacer hover */
 }
 
 #mensage-header {
     background-color: #0000ff;
     text-align: center;
     color: rgba(43, 190, 216, 0.466);
-    margin: 20px 0; /* Añadir margen arriba y abajo para separarlo del contenido */
+    margin: 20px 0;
+    /* Añadir margen arriba y abajo para separarlo del contenido */
 }
-

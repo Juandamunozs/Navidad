@@ -1,3 +1,5 @@
+//Recibir los elementos del html a javascript
+
 const mensaje = document.getElementById("mensaje");
 
 const anio = document.getElementById("anio");
@@ -49,6 +51,8 @@ const hora_graduation = document.getElementById("hora_graduation");
 const minuto_graduation = document.getElementById("minuto_graduation");
 const segundo_graduation = document.getElementById("segundo_graduation");
 
+//Funcion donde trasformo el mes en numero a mes en texto
+
 function meses(mes_actual) {
   const meses = [
     { indice: 1, mes: "Enero" },
@@ -76,6 +80,8 @@ function meses(mes_actual) {
   return mes_text;
 }
 
+//Funcion donde trasformo el horario de formato de 24 horas a 12 horas
+
 function hora_formato(hora_actual) {
   const hora = [
     { indice: 12, hour: "12" },
@@ -102,7 +108,10 @@ function hora_formato(hora_actual) {
   return hour_text;
 }
 
+//Funcion encargada de mostrar fecha de todas las cartas
 const mostrarFecha = () => {
+
+  //Fechas de destino o donde ocurre el evento
   const fecha_actual = new Date();
   const fecha_navidad = new Date(fecha_actual.getFullYear(), 11, 25); // 25 de diciembre del año actual
   const fecha_halloween = new Date(fecha_actual.getFullYear(), 9, 31); // 31 de octubre del año actual
@@ -112,30 +121,27 @@ const mostrarFecha = () => {
   const born = new Date(2024, 6, 3, 16, 0); // 3 de julio del año 2024 a las 16:00
   const fecha_graduation = new Date(fecha_actual.getFullYear(), 10, 20); // 20 de noviembre del año actual
 
-  const año_actual = fecha_actual.getFullYear();
+  //Fechas donde obtengo el mes, dia, hora, minuto y segundo en tiempo real
+  const año_actual = fecha_actual.getFullYear(); // Obtener el año actual
   const mes_actual = fecha_actual.getMonth() + 1; // Meses van de 0 a 11, sumamos 1 para mostrar correctamente
   const dia_actual = fecha_actual.getDate(); // Obtener el día del mes
-  const hora_actual = fecha_actual.getHours();
-  const minuto_actual = fecha_actual.getMinutes();
-  const segundo_actual = fecha_actual.getSeconds();
+  const hora_actual = fecha_actual.getHours(); // Obtener la hora actual
+  const minuto_actual = fecha_actual.getMinutes(); // Obtener el minuto actual
+  const segundo_actual = fecha_actual.getSeconds(); // Obtener el segundo actual
 
-
-
-
-  // Mostrar fecha actual
+  // Mostrar fecha actual en el html
   anio.innerText = año_actual;
   mes.innerText = meses(mes_actual);
   dia.innerText = dia_actual;
-  if(hora_actual<12){
+  if (hora_actual < 12) {
     hora.innerText = hora_actual + " AM";
-  }else{
+  } else {
     hora.innerText = hora_formato(hora_actual) + " PM";
   }
   minuto.innerText = minuto_actual;
   segundo.innerText = segundo_actual;
 
-  // Calcular tiempo restante para Navidad
-  // Calculando la diferencia en milisegundos
+  // Calcular tiempo restante para Navidad en milisegundos
   const diferencia_navidad = fecha_navidad - fecha_actual;
   const diferencia_newyear = fecha_anio_nuevo - fecha_actual;
   const diferencia_halloween = fecha_halloween - fecha_actual;
@@ -144,7 +150,7 @@ const mostrarFecha = () => {
   const diferencia_ms = fecha_actual - born;
   const diferencia_graduation = fecha_graduation - fecha_actual;
 
-  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  // Convirtiendo la diferencia a días, horas, minutos y segundos de navidad
   let segundos_restantes_navidad = Math.floor(diferencia_navidad / 1000);
   let minutos_restantes_navidad = Math.floor(segundos_restantes_navidad / 60);
   let horas_restantes_navidad = Math.floor(minutos_restantes_navidad / 60);
@@ -154,7 +160,7 @@ const mostrarFecha = () => {
   minutos_restantes_navidad %= 60;
   segundos_restantes_navidad %= 60;
 
-  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  // Convirtiendo la diferencia a días, horas, minutos y segundos de graduacion
   let segundos_restantes_graduation = Math.floor(diferencia_graduation / 1000);
   let minutos_restantes_graduation = Math.floor(segundos_restantes_graduation / 60);
   let horas_restantes_graduation = Math.floor(minutos_restantes_graduation / 60);
@@ -164,7 +170,7 @@ const mostrarFecha = () => {
   minutos_restantes_graduation %= 60;
   segundos_restantes_graduation %= 60;
 
-  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  // Convirtiendo la diferencia a días, horas, minutos y segundos de nuevo año
   let segundos_restantes_newyear = Math.floor(diferencia_newyear / 1000);
   let minutos_restantes_newyear = Math.floor(segundos_restantes_newyear / 60);
   let horas_restantes_newyear = Math.floor(minutos_restantes_newyear / 60);
@@ -174,7 +180,7 @@ const mostrarFecha = () => {
   minutos_restantes_newyear %= 60;
   segundos_restantes_newyear %= 60;
 
-  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  // Convirtiendo la diferencia a días, horas, minutos y segundos de halloween
   let segundos_restantes_halloween = Math.floor(diferencia_halloween / 1000);
   let minutos_restantes_halloween = Math.floor(segundos_restantes_halloween / 60);
   let horas_restantes_halloween = Math.floor(minutos_restantes_halloween / 60);
@@ -184,7 +190,7 @@ const mostrarFecha = () => {
   minutos_restantes_halloween %= 60;
   segundos_restantes_halloween %= 60;
 
-  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  // Convirtiendo la diferencia a días, horas, minutos y segundos de hbk
   let segundos_restantes_love = Math.floor(diferencia_love / 1000);
   let minutos_restantes_love = Math.floor(segundos_restantes_love / 60);
   let horas_restantes_love = Math.floor(minutos_restantes_love / 60);
@@ -194,7 +200,7 @@ const mostrarFecha = () => {
   minutos_restantes_love %= 60;
   segundos_restantes_love %= 60;
 
-  // Convirtiendo la diferencia a días, horas, minutos y segundos
+  // Convirtiendo la diferencia a días, horas, minutos y segundos de party 2 de enero
   let segundos_restantes_party = Math.floor(diferencia_party / 1000);
   let minutos_restantes_party = Math.floor(segundos_restantes_party / 60);
   let horas_restantes_party = Math.floor(minutos_restantes_party / 60);
@@ -206,53 +212,54 @@ const mostrarFecha = () => {
 
   // Mostrar el tiempo restante para Navidad
   anio_navidad.innerText = "Christmas en:"; // Año de la próxima Navidad (es el mismo que el actual)
-  mes_navidad.innerText = 12 - mes_actual+ " meses"; // Diciembre es el mes 12
-  dia_navidad.innerText = dias_restantes_navidad+ " dias";
-  hora_navidad.innerText = horas_restantes_navidad+ " horas";
-  minuto_navidad.innerText = minutos_restantes_navidad+ " minutos";
-  segundo_navidad.innerText = segundos_restantes_navidad+ " segundos";
+  mes_navidad.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
+  dia_navidad.innerText = dias_restantes_navidad + " dias";
+  hora_navidad.innerText = horas_restantes_navidad + " horas";
+  minuto_navidad.innerText = minutos_restantes_navidad + " minutos";
+  segundo_navidad.innerText = segundos_restantes_navidad + " segundos";
 
   // Mostrar el tiempo restante para año nuevo
   anio_nuevo.innerText = "New Year en:"; // Año de la próxima Navidad (es el mismo que el actual)
-  mes_nuevo.innerText = 12 - mes_actual+ " meses"; // Diciembre es el mes 12
-  dia_nuevo.innerText = dias_restantes_newyear+ " dias";
-  hora_nuevo.innerText = horas_restantes_newyear+ " horas";
-  minuto_nuevo.innerText = minutos_restantes_newyear+ " minutos";
-  segundo_nuevo.innerText = segundos_restantes_newyear+ " segundos";
+  mes_nuevo.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
+  dia_nuevo.innerText = dias_restantes_newyear + " dias";
+  hora_nuevo.innerText = horas_restantes_newyear + " horas";
+  minuto_nuevo.innerText = minutos_restantes_newyear + " minutos";
+  segundo_nuevo.innerText = segundos_restantes_newyear + " segundos";
 
   // Mostrar el tiempo restante para halloween
   anio_halloween.innerText = "Halloween en:"; // Año de la próxima halloween (es el mismo que el actual)
-  mes_halloween.innerText = 10 - mes_actual+ " meses"; // Diciembre es el mes 12
-  dia_halloween.innerText = dias_restantes_halloween+ " dias";
-  hora_halloween.innerText = horas_restantes_halloween+ " horas";
-  minuto_halloween.innerText = minutos_restantes_halloween+ " minutos";
-  segundo_halloween.innerText = segundos_restantes_halloween+ " segundos";
+  mes_halloween.innerText = 10 - mes_actual + " meses"; // Diciembre es el mes 12
+  dia_halloween.innerText = dias_restantes_halloween + " dias";
+  hora_halloween.innerText = horas_restantes_halloween + " horas";
+  minuto_halloween.innerText = minutos_restantes_halloween + " minutos";
+  segundo_halloween.innerText = segundos_restantes_halloween + " segundos";
 
 
-  // Mostrar el tiempo restante para love
+  // Mostrar el tiempo restante para hbk
   anio_love.innerText = "HB en:"; // Año de la próxima HB love (es el mismo que el actual)
   mes_love.innerText = 10 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_love.innerText = dias_restantes_love  + " dias";
+  dia_love.innerText = dias_restantes_love + " dias";
   hora_love.innerText = horas_restantes_love + " horas";
   minuto_love.innerText = minutos_restantes_love + " minutos";
   segundo_love.innerText = segundos_restantes_love + " segundos";
 
   // Mostrar el tiempo restante para party
   anio_party.innerText = "Village en:"; // Año de la próxima party (es el mismo que el actual)
-  mes_party.innerText = 12 - mes_actual+ " meses"; // Diciembre es el mes 12
-  dia_party.innerText = dias_restantes_party+ " dias";
-  hora_party.innerText = horas_restantes_party+ " horas";
-  minuto_party.innerText = minutos_restantes_party+ " minutos";
-  segundo_party.innerText = segundos_restantes_party+ " segundos";
+  mes_party.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
+  dia_party.innerText = dias_restantes_party + " dias";
+  hora_party.innerText = horas_restantes_party + " horas";
+  minuto_party.innerText = minutos_restantes_party + " minutos";
+  segundo_party.innerText = segundos_restantes_party + " segundos";
 
   // Mostrar el tiempo restante para graduation
   anio_graduation.innerText = "Pensum en:"; // Año de la próxima graduation (es el mismo que el actual)
-  mes_graduation.innerText = 11 - mes_actual+ " meses"; // Diciembre es el mes 12
-  dia_graduation.innerText = dias_restantes_graduation+ " dias";
-  hora_graduation.innerText = horas_restantes_graduation+ " horas";
-  minuto_graduation.innerText = minutos_restantes_graduation+ " minutos";
-  segundo_graduation.innerText = segundos_restantes_graduation+ " segundos";
+  mes_graduation.innerText = 11 - mes_actual + " meses"; // Diciembre es el mes 12
+  dia_graduation.innerText = dias_restantes_graduation + " dias";
+  hora_graduation.innerText = horas_restantes_graduation + " horas";
+  minuto_graduation.innerText = minutos_restantes_graduation + " minutos";
+  segundo_graduation.innerText = segundos_restantes_graduation + " segundos";
 
+  //Mensaje para el dia en que ocurre el evento
   if (mes_actual == 10 && dia_actual == 3) {
     mensaje.innerText = "¡Feliz cumpleaños 👩‍❤️‍💋‍👨 !"
   } else if (mes_actual == 10 && dia_actual == 31) {
@@ -269,7 +276,7 @@ const mostrarFecha = () => {
     mensaje.innerText = ""
   }
 
-  // Calcular años, meses, días, horas, minutos y segundos
+  // Calcular años, meses, días, horas, minutos y segundos por consola
   let segundos_totales_born = Math.floor(diferencia_ms / 1000);
 
   let anios_born = Math.floor(segundos_totales_born / 31536000);
@@ -292,83 +299,86 @@ const mostrarFecha = () => {
   console.log(`Creado hace ${anios_born} años, ${meses_born} meses, ${dias_born} dias, ${horas_born} horas, ${minutos_born} minutos, ${segundos_born} segundos`);
 };
 
+//Funcion encargada de hacer que se actualice los datos cada segundo
+
 const intervalo = setInterval(mostrarFecha, 1000);
 
+//Alertas inteligentes
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Selecciona el contenedor de Navidad
   var containeractual = document.querySelector('.container-actual');
-  
+
   // Agrega el EventListener para el clic
-  containeractual.addEventListener('click', function() {
-      // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('El arte de la vida radica en vivir cada día con propósito y pasión, encontrando belleza en los pequeños momentos 🕒');
+  containeractual.addEventListener('click', function () {
+    // Alerta cuando se hace clic en el contenedor de Navidad
+    alert('El arte de la vida radica en vivir cada día con propósito y pasión, encontrando belleza en los pequeños momentos 🕒');
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Selecciona el contenedor de Navidad
   var containerHB = document.querySelector('.container-love');
-  
+
   // Agrega el EventListener para el clic
-  containerHB.addEventListener('click', function() {
-      // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('Un cumpleaños es un recordatorio especial de cuánto brilla una vida cuando se celebra con amor y gratitud 🎂');
+  containerHB.addEventListener('click', function () {
+    // Alerta cuando se hace clic en el contenedor de Navidad
+    alert('Un cumpleaños es un recordatorio especial de cuánto brilla una vida cuando se celebra con amor y gratitud 🎂');
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Selecciona el contenedor de Navidad
   var containerHalloween = document.querySelector('.container-halloween');
-  
+
   // Agrega el EventListener para el clic
-  containerHalloween.addEventListener('click', function() {
-      // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('En Halloween, las sombras cobran vida y los corazones se llenan de misterio y diversión 🎃');
+  containerHalloween.addEventListener('click', function () {
+    // Alerta cuando se hace clic en el contenedor de Navidad
+    alert('En Halloween, las sombras cobran vida y los corazones se llenan de misterio y diversión 🎃');
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Selecciona el contenedor de Navidad
   var containerGraduation = document.querySelector('.container-graduation');
-  
+
   // Agrega el EventListener para el clic
-  containerGraduation.addEventListener('click', function() {
-      // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('El diploma en mano marca el fin de un capítulo, pero el comienzo de un camino lleno de promesas y metas por cumplir 🎓');
+  containerGraduation.addEventListener('click', function () {
+    // Alerta cuando se hace clic en el contenedor de Navidad
+    alert('El diploma en mano marca el fin de un capítulo, pero el comienzo de un camino lleno de promesas y metas por cumplir 🎓');
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Selecciona el contenedor de Navidad
   var containerNavidad = document.querySelector('.container-navidad');
-  
+
   // Agrega el EventListener para el clic
-  containerNavidad.addEventListener('click', function() {
-      // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('¡La Navidad trae consigo la magia de la paz y el amor, envolviendo corazones con esperanza y alegría! 🎄');
+  containerNavidad.addEventListener('click', function () {
+    // Alerta cuando se hace clic en el contenedor de Navidad
+    alert('¡La Navidad trae consigo la magia de la paz y el amor, envolviendo corazones con esperanza y alegría! 🎄');
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Selecciona el contenedor de Navidad
-  var containerAnioNuevo= document.querySelector('.container-anionuevo');
-  
+  var containerAnioNuevo = document.querySelector('.container-anionuevo');
+
   // Agrega el EventListener para el clic
-  containerAnioNuevo.addEventListener('click', function() {
-      // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('Que cada nuevo año traiga consigo renovadas esperanzas, oportunidades ilimitadas y momentos inolvidables 🎇');
+  containerAnioNuevo.addEventListener('click', function () {
+    // Alerta cuando se hace clic en el contenedor de Navidad
+    alert('Que cada nuevo año traiga consigo renovadas esperanzas, oportunidades ilimitadas y momentos inolvidables 🎇');
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Selecciona el contenedor de Navidad
-  var containerParty= document.querySelector('.container-party');
-  
+  var containerParty = document.querySelector('.container-party');
+
   // Agrega el EventListener para el clic
-  containerParty.addEventListener('click', function() {
-      // Alerta cuando se hace clic en el contenedor de Navidad
-      alert('El reencuentro trae consigo la felicidad de volver a sentir cercanos a quienes tanto se extrañó 💫');
+  containerParty.addEventListener('click', function () {
+    // Alerta cuando se hace clic en el contenedor de Navidad
+    alert('El reencuentro trae consigo la felicidad de volver a sentir cercanos a quienes tanto se extrañó 💫');
   });
 });
 
