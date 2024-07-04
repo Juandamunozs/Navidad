@@ -217,7 +217,7 @@ const mostrarFecha = () => {
 
   // Mostrar el tiempo restante para graduation
   anio_graduation.innerText = "Pensum en:"; // Año de la próxima graduation (es el mismo que el actual)
-  mes_graduation.innerText = 13 - mes_actual+ " meses"; // Diciembre es el mes 12
+  mes_graduation.innerText = 11 - mes_actual+ " meses"; // Diciembre es el mes 12
   dia_graduation.innerText = dias_restantes_graduation+ " dias";
   hora_graduation.innerText = horas_restantes_graduation+ " horas";
   minuto_graduation.innerText = minutos_restantes_graduation+ " minutos";
