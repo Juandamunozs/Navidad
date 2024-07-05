@@ -15,6 +15,7 @@ const cancion_recomendada = document.getElementById("cancion_recomendada");
 const nombre_del_autor = document.getElementById("nombre_autor");
 const fecha_de_lanzamiento = document.getElementById("fecha_lanzamiento");
 const genero_cancion = document.getElementById("genero");
+const nota_cancion = document.getElementById("nota");
 
 //Recibir datos de fecha actual de html a js
 const anio = document.getElementById("anio");
@@ -169,6 +170,7 @@ const mostrarFecha = () => {
   const nombre_autor = "Fenix de fuego";
   const fecha_lanzamiento = "2022";
   const genero = "Cumbia";
+  const nota = "Recomendada de la semana 🔥";
 
   //Fechas de destino o donde ocurre el evento
   const fecha_actual = new Date();
@@ -405,7 +407,7 @@ const mostrarFecha = () => {
   nombre_del_autor.innerText = nombre_autor;
   fecha_de_lanzamiento.innerText = fecha_lanzamiento;
   genero_cancion.innerText = genero;
-
+  nota_cancion.innerText = nota;
 
   //Mensaje para el dia en que ocurre el evento
   if (mes_actual == 10 && dia_actual == 3) {

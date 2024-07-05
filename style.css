@@ -186,3 +186,12 @@ body {
     color: purple;
     font-weight: bold;
 }
+
+#reproduccion_recomendada:hover {
+    color: white;
+}
+
+#nota{
+    color: rgb(233, 14, 61);
+    font-weight: bold;
+}
