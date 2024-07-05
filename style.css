@@ -72,7 +72,8 @@ body {
 .container-san-valentin,
 .container-hb,
 .container-colombia,
-.container-real_madrid {
+.container-real_madrid,
+.container-cancion_recomendada{
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -140,6 +141,11 @@ body {
     /* Color del borde al hacer hover */
 }
 
+.container-cancion_recomendada{
+    border: 2px solid rgb(10, 13, 187);
+    /* Color del borde al hacer hover */
+}
+
 #text_titulo {
     color: #1885df;
 }
@@ -154,7 +160,8 @@ body {
 .container-san-valentin:hover,
 .container-hb:hover,
 .container-colombia:hover,
-.container-real_madrid:hover {
+.container-real_madrid:hover,
+.container-cancion_recomendada:hover{
     border: 2px solid blue;
     /* Color del borde al hacer hover */
     background-color: rgba(0, 0, 255, 0.1);

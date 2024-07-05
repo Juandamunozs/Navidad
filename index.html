@@ -7,8 +7,8 @@
     <title>Eventos Especiales</title>
     <link rel="stylesheet" href="style.css">
     <!-- Enlaces para el favicon -->
-    <link rel="icon" type="image/png" href="/logo_web_navicon/navicon.png">
-    <link rel="shortcut icon" type="image/png" href="/logo_web_navicon/navicon.png">
+    <link rel="icon" type="image/png" href="./logo/navicon.png">
+    <link rel="shortcut icon" type="image/png" href="./logo/navicon.png">
 
 
 </head>
@@ -25,6 +25,17 @@
                 <p>Hora: <span id="hora"></span></p>
                 <p>Minuto: <span id="minuto"></span></p>
                 <p>Segundo: <span id="segundo"></span></p>
+            </div>
+        </div>
+
+
+        <div class="container-cancion_recomendada">
+            <h2 id="text_titulo">🎶</h2>
+            <div class="fecha-hora">
+                <p class="name_event"><span id="cancion_recomendada"></span></p>
+                <p><span id="nombre_autor"></span></p>
+                <p><span id="fecha_lanzamiento"></span></p>
+                <p><span id="genero"></span></p>
             </div>
         </div>
 
@@ -150,7 +161,8 @@
         </div>
     </div>
 
-    <script src="Calendario.js"></script>
+    <script src="./Js/Calendario.js"></script>
+    <script src="./Js/evento_audio.js"></script>
 </body>
 
 </html>
