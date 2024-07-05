@@ -214,7 +214,7 @@ const mostrarFecha = () => {
   const fecha_anio_nuevo = new Date(fecha_actual.getFullYear() + 1, 0, 1); // 1 de enero del año 2025
   const fecha_party = new Date(fecha_actual.getFullYear() + 1, 0, 2); // 2 de enero del año 2025
   const fecha_love = new Date(fecha_actual.getFullYear(), 9, 4); // 4 de octubre del año actual
-  const born = new Date(2024, 6, 3, 16, 0); // 3 de julio del año 2024 a las 16:00
+  const born = new Date(2024, 6, 3, 16, 23); // 3 de julio del año 2024 a las 16:23
   const fecha_graduation = new Date(fecha_actual.getFullYear(), 10, 20); // 20 de noviembre del año actual
   const fecha_bd = new Date(fecha_actual.getFullYear(), 10, 5); // 5 de noviembre del año actual
   const fecha_colombia = new Date(2024, 6, 6, 17, 0); // 6 de julio a las 5 pm del año actual
