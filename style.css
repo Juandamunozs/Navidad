@@ -73,7 +73,8 @@ body {
 .container-hb,
 .container-colombia,
 .container-real_madrid,
-.container-cancion_recomendada{
+.container-cancion_recomendada,
+.container-cancion_favorita{
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -146,6 +147,11 @@ body {
     /* Color del borde al hacer hover */
 }
 
+.container-cancion_favorita{
+    border: 2px solid rgb(119, 228, 17);
+    /* Color del borde al hacer hover */
+}
+
 #text_titulo {
     color: #1885df;
 }
@@ -161,7 +167,8 @@ body {
 .container-hb:hover,
 .container-colombia:hover,
 .container-real_madrid:hover,
-.container-cancion_recomendada:hover{
+.container-cancion_recomendada:hover,
+.container-cancion_favorita:hover {
     border: 2px solid blue;
     /* Color del borde al hacer hover */
     background-color: rgba(0, 0, 255, 0.1);
@@ -191,7 +198,9 @@ body {
     color: white;
 }
 
-#nota{
+#nota, 
+#nota_favorita{
     color: rgb(233, 14, 61);
     font-weight: bold;
 }
+

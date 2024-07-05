@@ -1,8 +1,5 @@
 //Recibir los elementos del html a javascript
 
-//Mensaje de evento 
-const mensaje = document.getElementById("mensage-header");
-
 //constantes de texto para buenas practicas
 const meses = "months"
 const dias = "days"
@@ -18,12 +15,19 @@ const equipo_visitante_club = "Milan";
 const equipo_local_seleccion = "Colombia";
 const equipo_visitante_seleccion = "Panama";
 
-//Recibir datos de la cancion recomendad de html a js
+//Recibir datos de la cancion recomendada de html a js
 const cancion_recomendada = document.getElementById("cancion_recomendada");
 const nombre_del_autor = document.getElementById("nombre_autor");
 const fecha_de_lanzamiento = document.getElementById("fecha_lanzamiento");
 const genero_cancion = document.getElementById("genero");
 const nota_cancion = document.getElementById("nota");
+
+//Recibir datos de la cancion favorita de html a js
+const cancion_favorita = document.getElementById("cancion_favorita");
+const nombre_del_autor_favorita = document.getElementById("nombre_favorita");
+const fecha_de_lanzamiento_favorita = document.getElementById("fecha_lanzamiento_favorita");
+const genero_cancion_favorita = document.getElementById("genero_favorita");
+const nota_cancion_favorita = document.getElementById("nota_favorita");
 
 //Recibir datos de fecha actual de html a js
 const anio = document.getElementById("anio");
@@ -200,11 +204,18 @@ function hora_formato_dia(hora_actual) {
 const mostrarFecha = () => {
 
   //Datos sobre la cancion recomendada
-  const nombre_cancion = "Despues de ti";
-  const nombre_autor = "Fenix de fuego";
-  const fecha_lanzamiento = "2022";
-  const genero = "Cumbia";
-  const nota = "Recomendada de la semana 🔥";
+  const nombre_cancion_recomendada_cos = "Despues de ti";
+  const nombre_autor_recomendada_cos = "Fenix de fuego";
+  const fecha_lanzamiento_recomendada_cos = "2022";
+  const genero_recomendada_cos = "Cumbia";
+  const nota_recomendada_cos = "Recomendada de la semana 🔥";
+
+    //Datos sobre la cancion favorita
+    const nombre_cancion_favorita_cos = "Como dormiste?";
+    const nombre_autor_favorita_cos = "Rels B";
+    const fecha_lanzamiento_favorita_cos = "2022";
+    const genero_favorita_cos = "Pop";
+    const nota_favorita_cos = "Cancion Favorita ✨";
 
   //Fechas de destino o donde ocurre el evento
   const fecha_actual = new Date();
@@ -436,29 +447,19 @@ const mostrarFecha = () => {
   minuto_real_madrid.innerText = minutos_restantes_real_madrid + " " + minutos;
   segundo_real_madrid.innerText = segundos_restantes_real_madrid + " " + segundos;
 
-  //Enviar datos de js a html de la cancion recomendad
-  cancion_recomendada.innerText = nombre_cancion;
-  nombre_del_autor.innerText = nombre_autor;
-  fecha_de_lanzamiento.innerText = fecha_lanzamiento;
-  genero_cancion.innerText = genero;
-  nota_cancion.innerText = nota;
+  //Enviar datos de js a html de la cancion recomendada
+  cancion_recomendada.innerText = nombre_cancion_recomendada_cos;
+  nombre_del_autor.innerText = nombre_autor_recomendada_cos;
+  fecha_de_lanzamiento.innerText = fecha_lanzamiento_recomendada_cos;
+  genero_cancion.innerText = genero_recomendada_cos;
+  nota_cancion.innerText = nota_recomendada_cos;
 
-  //Mensaje para el dia en que ocurre el evento
-  if (mes_actual == 10 && dia_actual == 3) {
-    mensaje.innerText = "¡Feliz cumpleaños 👩‍❤️‍💋‍👨 !"
-  } else if (mes_actual == 10 && dia_actual == 31) {
-    mensaje.innerText = "¡Halloween 👻🎃!"
-  } else if (mes_actual == 12 && dia_actual == 25) {
-    mensaje.innerText = "¡Feliz navidad 🎅🎄!"
-  } else if (mes_actual == 1 && dia_actual == 1) {
-    mensaje.innerText = "¡Feliz año nuevo " + año_actual + " 🎇!"
-  } else if (mes_actual == 1 && dia_actual == 2) {
-    mensaje.innerText = "Llego el dia"
-  } else if (mes_actual == 11 && dia_actual == 20 && hora_actual >= 21) {
-    mensaje.innerText = "Acabe pensum 🎓"
-  } else {
-    mensaje.innerText = ""
-  }
+  //Enviar datos de js a html de la cancion favorita
+  cancion_favorita.innerText = nombre_cancion_favorita_cos;
+  nombre_del_autor_favorita.innerText = nombre_autor_favorita_cos;
+  fecha_de_lanzamiento_favorita.innerText = fecha_lanzamiento_favorita_cos;
+  genero_cancion_favorita.innerText = genero_favorita_cos;
+  nota_cancion_favorita.innerText = nota_favorita_cos;
 
   // Calcular años, meses, días, horas, minutos y segundos por consola
   let segundos_totales_born = Math.floor(diferencia_ms / 1000);
