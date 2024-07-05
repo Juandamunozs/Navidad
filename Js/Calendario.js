@@ -405,7 +405,7 @@ const mostrarFecha = () => {
   segundo_graduation.innerText = segundos_restantes_graduation + " " + segundos;
 
   //Enviar datos de js a html de san valentin
-  san_valentin.innerText = "Amor y amistad in:"; // Año de la próxima graduation (es el mismo que el actual)
+  san_valentin.innerText = "Friendship Day in:"; // Año de la próxima graduation (es el mismo que el actual)
   mes_san_valentin.innerText = 9 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_san_valentin.innerText = dias_restantes_san_valentin + " " + dias;
   hora_san_valentin.innerText = horas_restantes_san_valentin + " " + horas;
