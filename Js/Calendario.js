@@ -4,11 +4,19 @@
 const mensaje = document.getElementById("mensage-header");
 
 //constantes de texto para buenas practicas
-const meses = "meses"
-const dias = "dias"
-const horas = "horas"
-const minutos = "minutos"
-const segundos = "segundos"
+const meses = "months"
+const dias = "days"
+const horas = "hours"
+const minutos = "minutes"
+const segundos = "seconds"
+
+//constanes de cuaando juega  real madrid 
+const equipo_local_club = "Real Madrid";
+const equipo_visitante_club = "Milan";
+
+//constanes de cuando juega  colombia 
+const equipo_local_seleccion = "Colombia";
+const equipo_visitante_seleccion = "Panama";
 
 //Recibir datos de la cancion recomendad de html a js
 const cancion_recomendada = document.getElementById("cancion_recomendada");
@@ -109,19 +117,19 @@ const segundo_real_madrid = document.getElementById("segundo_real_madrid");
 
 function meses_texto(mes_actual) {
   const meses = [
-    { indice: 1, mes: "Enero" },
-    { indice: 2, mes: "Mebrero" },
-    { indice: 3, mes: "Marzo" },
-    { indice: 4, mes: "Abril" },
-    { indice: 5, mes: "Mayo" },
-    { indice: 6, mes: "Junio" },
-    { indice: 7, mes: "Julio" },
-    { indice: 8, mes: "Agosto" },
-    { indice: 9, mes: "Septiembre" },
-    { indice: 10, mes: "Octubre" },
-    { indice: 11, mes: "Noviembre" },
-    { indice: 12, mes: "Diciembre" }
-  ];
+    { indice: 1, mes: "January" },
+    { indice: 2, mes: "February" },
+    { indice: 3, mes: "March" },
+    { indice: 4, mes: "April" },
+    { indice: 5, mes: "May" },
+    { indice: 6, mes: "June" },
+    { indice: 7, mes: "July" },
+    { indice: 8, mes: "August" },
+    { indice: 9, mes: "September" },
+    { indice: 10, mes: "October" },
+    { indice: 11, mes: "November" },
+    { indice: 12, mes: "December" }
+];
 
   let mes_text = "";
 
@@ -136,7 +144,7 @@ function meses_texto(mes_actual) {
 
 //Funcion donde trasformo el horario de formato de 24 horas a 12 horas
 
-function hora_formato(hora_actual) {
+function hora_formato_noche(hora_actual) {
   const hora = [
     { indice: 12, hour: "12" },
     { indice: 13, hour: "1" },
@@ -150,6 +158,32 @@ function hora_formato(hora_actual) {
     { indice: 21, hour: "9" },
     { indice: 22, hour: "10" },
     { indice: 23, hour: "11" }
+  ];
+
+  let hour_text = "";
+
+  hora.forEach((hour_now) => {
+    if (hora_actual === hour_now.indice) {
+      hour_text = hour_now.hour;
+    }
+  });
+  return hour_text;
+}
+
+function hora_formato_dia(hora_actual) {
+  const hora = [
+    { indice: 0, hour: "12" },
+    { indice: 1, hour: "1" },
+    { indice: 2, hour: "2" },
+    { indice: 3, hour: "3" },
+    { indice: 4, hour: "4" },
+    { indice: 5, hour: "5" },
+    { indice: 6, hour: "6" },
+    { indice: 7, hour: "7" },
+    { indice: 8, hour: "8" },
+    { indice: 9, hour: "9" },
+    { indice: 10, hour: "10" },
+    { indice: 11, hour: "11" },
   ];
 
   let hour_text = "";
@@ -199,9 +233,9 @@ const mostrarFecha = () => {
   mes.innerText = meses_texto(mes_actual);
   dia.innerText = dia_actual;
   if (hora_actual < 12) {
-    hora.innerText = hora_actual + " AM";
+    hora.innerText = hora_formato_dia(hora_actual) + " AM";
   } else {
-    hora.innerText = hora_formato(hora_actual) + " PM";
+    hora.innerText = hora_formato_noche(hora_actual) + " PM";
   }
   minuto.innerText = minuto_actual;
   segundo.innerText = segundo_actual;
@@ -322,7 +356,7 @@ const mostrarFecha = () => {
   segundos_restantes_real_madrid %= 60;
 
   //Enviar datos de js a html de navidad
-  navidad.innerText = "Christmas en:"; // Año de la próxima Navidad (es el mismo que el actual)
+  navidad.innerText = "Christmas in:"; // Año de la próxima Navidad (es el mismo que el actual)
   mes_navidad.innerText = 12 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_navidad.innerText = dias_restantes_navidad + " " + dias;
   hora_navidad.innerText = horas_restantes_navidad + " " + horas;
@@ -330,7 +364,7 @@ const mostrarFecha = () => {
   segundo_navidad.innerText = segundos_restantes_navidad + " " + segundos;
 
   //Enviar datos de js a html del nuevo año
-  nuevo.innerText = "New Year en:"; // Año de la próxima Navidad (es el mismo que el actual)
+  nuevo.innerText = "New Year in:"; // Año de la próxima Navidad (es el mismo que el actual)
   mes_nuevo.innerText = 12 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_nuevo.innerText = dias_restantes_newyear + " " + dias;
   hora_nuevo.innerText = horas_restantes_newyear + " " + horas;
@@ -338,7 +372,7 @@ const mostrarFecha = () => {
   segundo_nuevo.innerText = segundos_restantes_newyear + " " + segundos;
 
   //Enviar datos de js a html de halloween
-  halloween.innerText = "Halloween en:"; // Año de la próxima halloween (es el mismo que el actual)
+  halloween.innerText = "Halloween in:"; // Año de la próxima halloween (es el mismo que el actual)
   mes_halloween.innerText = 10 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_halloween.innerText = dias_restantes_halloween + " " + dias;
   hora_halloween.innerText = horas_restantes_halloween + " " + horas;
@@ -347,7 +381,7 @@ const mostrarFecha = () => {
 
 
   //Enviar datos de js a html de hbk
-  love.innerText = "HB en:"; // Año de la próxima HB love (es el mismo que el actual)
+  love.innerText = "HB in:"; // Año de la próxima HB love (es el mismo que el actual)
   mes_love.innerText = 10 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_love.innerText = dias_restantes_love + " " + dias;
   hora_love.innerText = horas_restantes_love + " " + horas;
@@ -355,7 +389,7 @@ const mostrarFecha = () => {
   segundo_love.innerText = segundos_restantes_love + " " + segundos;
 
   //Enviar datos de js a html de party
-  party.innerText = "Village en:"; // Año de la próxima party (es el mismo que el actual)
+  party.innerText = "Village in:"; // Año de la próxima party (es el mismo que el actual)
   mes_party.innerText = 12 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_party.innerText = dias_restantes_party + " " + dias;
   hora_party.innerText = horas_restantes_party + " " + horas;
@@ -363,7 +397,7 @@ const mostrarFecha = () => {
   segundo_party.innerText = segundos_restantes_party + " " + segundos;
 
   //Enviar datos de js a html de graduation
-  graduation.innerText = "Pensum en:"; // Año de la próxima graduation (es el mismo que el actual)
+  graduation.innerText = "Pensum in:"; // Año de la próxima graduation (es el mismo que el actual)
   mes_graduation.innerText = 11 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_graduation.innerText = dias_restantes_graduation + " " + dias;
   hora_graduation.innerText = horas_restantes_graduation + " " + horas;
@@ -371,7 +405,7 @@ const mostrarFecha = () => {
   segundo_graduation.innerText = segundos_restantes_graduation + " " + segundos;
 
   //Enviar datos de js a html de san valentin
-  san_valentin.innerText = "Amor y amistad en:"; // Año de la próxima graduation (es el mismo que el actual)
+  san_valentin.innerText = "Amor y amistad in:"; // Año de la próxima graduation (es el mismo que el actual)
   mes_san_valentin.innerText = 9 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_san_valentin.innerText = dias_restantes_san_valentin + " " + dias;
   hora_san_valentin.innerText = horas_restantes_san_valentin + " " + horas;
@@ -379,7 +413,7 @@ const mostrarFecha = () => {
   segundo_san_valentin.innerText = segundos_restantes_san_valentin + " " + segundos;
 
   //Enviar datos de js a html de mi cumpleaños
-  bd.innerText = "HB en:"; // Año de la próxima graduation (es el mismo que el actual)
+  bd.innerText = "HB in:"; // Año de la próxima graduation (es el mismo que el actual)
   mes_bd.innerText = 11 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_bd.innerText = dias_restantes_bd + " " + dias;
   hora_bd.innerText = horas_restantes_bd + " " + horas;
@@ -387,7 +421,7 @@ const mostrarFecha = () => {
   segundo_bd.innerText = segundos_restantes_bd + " " + segundos;
 
   //Enviar datos de js a html de la seleccion colombia
-  colombia.innerText = "Colombia Vs. Panama en:"; // Año de la próxima graduation (es el mismo que el actual)
+  colombia.innerText = equipo_local_seleccion + " Vs. " + equipo_visitante_seleccion + " in:"; // Año de la próxima graduation (es el mismo que el actual)
   mes_colombia.innerText = 7 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_colombia.innerText = dias_restantes_colombia + " " + dias;
   hora_colombia.innerText = horas_restantes_colombia + " " + horas;
@@ -395,7 +429,7 @@ const mostrarFecha = () => {
   segundo_colombia.innerText = segundos_restantes_colombia + " " + segundos;
 
   //Enviar datos de js a html del real madrid
-  real_madrid.innerText = "Real Madrid Vs. Milan en:"; // Año de la próxima graduation (es el mismo que el actual)
+  real_madrid.innerText = equipo_local_club + " Vs. " + equipo_visitante_club + " in:"; // Año de la próxima graduation (es el mismo que el actual)
   mes_real_madrid.innerText = 7 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_real_madrid.innerText = dias_restantes_real_madrid + " " + dias;
   hora_real_madrid.innerText = horas_restantes_real_madrid + " " + horas;
