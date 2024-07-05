@@ -70,7 +70,9 @@ body {
 .container-party,
 .container-graduation,
 .container-san-valentin,
-.container-hb {
+.container-hb,
+.container-colombia,
+.container-real_madrid {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -128,8 +130,17 @@ body {
     /* Color del borde al hacer hover */
 }
 
+.container-colombia {
+    border: 2px solid rgb(252, 248, 1);
+    /* Color del borde al hacer hover */
+}
 
-#tex-actual {
+.container-real_madrid {
+    border: 2px solid rgb(124, 5, 235);
+    /* Color del borde al hacer hover */
+}
+
+#text_titulo {
     color: #1885df;
 }
 
@@ -141,7 +152,9 @@ body {
 .container-party:hover,
 .container-graduation:hover,
 .container-san-valentin:hover,
-.container-hb:hover {
+.container-hb:hover,
+.container-colombia:hover,
+.container-real_madrid:hover {
     border: 2px solid blue;
     /* Color del borde al hacer hover */
     background-color: rgba(0, 0, 255, 0.1);

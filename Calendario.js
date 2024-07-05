@@ -3,6 +3,13 @@
 //Mensaje de evento 
 const mensaje = document.getElementById("mensage-header");
 
+//constantes de texto para buenas practicas
+const meses = "meses"
+const dias = "dias"
+const horas = "horas"
+const minutos = "minutos"
+const segundos = "segundos"
+
 //Recibir datos de fecha actual de html a js
 const anio = document.getElementById("anio");
 const mes = document.getElementById("mes");
@@ -75,9 +82,25 @@ const hora_bd = document.getElementById("hora_bd");
 const minuto_bd = document.getElementById("minuto_bd");
 const segundo_bd = document.getElementById("segundo_bd");
 
+//Recibir datos de la seleccion colombia de html a js
+const colombia = document.getElementById("colombia");
+const mes_colombia = document.getElementById("mes_colombia");
+const dia_colombia = document.getElementById("dia_colombia");
+const hora_colombia = document.getElementById("hora_colombia");
+const minuto_colombia = document.getElementById("minuto_colombia");
+const segundo_colombia = document.getElementById("segundo_colombia");
+
+//Recibir datos de la seleccion real madrid de html a js
+const real_madrid = document.getElementById("real_madrid");
+const mes_real_madrid = document.getElementById("mes_real_madrid");
+const dia_real_madrid = document.getElementById("dia_real_madrid");
+const hora_real_madrid = document.getElementById("hora_real_madrid");
+const minuto_real_madrid = document.getElementById("minuto_real_madrid");
+const segundo_real_madrid = document.getElementById("segundo_real_madrid");
+
 //Funcion donde trasformo el mes en numero a mes en texto
 
-function meses(mes_actual) {
+function meses_texto(mes_actual) {
   const meses = [
     { indice: 1, mes: "Enero" },
     { indice: 2, mes: "Mebrero" },
@@ -146,6 +169,8 @@ const mostrarFecha = () => {
   const born = new Date(2024, 6, 3, 16, 0); // 3 de julio del año 2024 a las 16:00
   const fecha_graduation = new Date(fecha_actual.getFullYear(), 10, 20); // 20 de noviembre del año actual
   const fecha_bd = new Date(fecha_actual.getFullYear(), 10, 5); // 5 de noviembre del año actual
+  const fecha_colombia = new Date(2024, 6, 6, 17, 0); // 6 de julio a las 5 pm del año actual
+  const fecha_real_madrid = new Date(2024, 6, 31, 19, 30); // 6 de julio a las 5 pm del año actual
 
   //Fechas donde obtengo el mes, dia, hora, minuto y segundo en tiempo real
   const año_actual = fecha_actual.getFullYear(); // Obtener el año actual
@@ -157,7 +182,7 @@ const mostrarFecha = () => {
 
   //Enviar datos de js a html de la fecha actual
   anio.innerText = año_actual;
-  mes.innerText = meses(mes_actual);
+  mes.innerText = meses_texto(mes_actual);
   dia.innerText = dia_actual;
   if (hora_actual < 12) {
     hora.innerText = hora_actual + " AM";
@@ -177,6 +202,10 @@ const mostrarFecha = () => {
   const diferencia_graduation = fecha_graduation - fecha_actual;
   const diferencia_san_valentin = fecha_valentin - fecha_actual;
   const diferencia_bd = fecha_bd - fecha_actual;
+  const diferencia_colombia = fecha_colombia - fecha_actual;
+  const diferencia_real_madrid = fecha_real_madrid - fecha_actual;
+
+  
 
   // Convirtiendo la diferencia a días, horas, minutos y segundos de navidad
   let segundos_restantes_navidad = Math.floor(diferencia_navidad / 1000);
@@ -258,70 +287,106 @@ const mostrarFecha = () => {
   minutos_restantes_bd %= 60;
   segundos_restantes_bd %= 60;
 
-  //Enviar datos de js a html de navidad
-  navidad.innerText = "Christmas en:"; // Año de la próxima Navidad (es el mismo que el actual)
-  mes_navidad.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_navidad.innerText = dias_restantes_navidad + " dias";
-  hora_navidad.innerText = horas_restantes_navidad + " horas";
-  minuto_navidad.innerText = minutos_restantes_navidad + " minutos";
-  segundo_navidad.innerText = segundos_restantes_navidad + " segundos";
+  // Convirtiendo la diferencia a días, horas, minutos y segundos de la seleccion colombia
+  let segundos_restantes_colombia = Math.floor(diferencia_colombia / 1000);
+  let minutos_restantes_colombia = Math.floor(segundos_restantes_colombia / 60);
+  let horas_restantes_colombia = Math.floor(minutos_restantes_colombia / 60);
+  const dias_restantes_colombia = Math.floor(horas_restantes_colombia / 24);
 
-  //Enviar datos de js a html del nuevo año
-  nuevo.innerText = "New Year en:"; // Año de la próxima Navidad (es el mismo que el actual)
-  mes_nuevo.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_nuevo.innerText = dias_restantes_newyear + " dias";
-  hora_nuevo.innerText = horas_restantes_newyear + " horas";
-  minuto_nuevo.innerText = minutos_restantes_newyear + " minutos";
-  segundo_nuevo.innerText = segundos_restantes_newyear + " segundos";
+  horas_restantes_colombia %= 24;
+  minutos_restantes_colombia %= 60;
+  segundos_restantes_colombia %= 60;
 
-  //Enviar datos de js a html de halloween
-  halloween.innerText = "Halloween en:"; // Año de la próxima halloween (es el mismo que el actual)
-  mes_halloween.innerText = 10 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_halloween.innerText = dias_restantes_halloween + " dias";
-  hora_halloween.innerText = horas_restantes_halloween + " horas";
-  minuto_halloween.innerText = minutos_restantes_halloween + " minutos";
-  segundo_halloween.innerText = segundos_restantes_halloween + " segundos";
+  // Convirtiendo la diferencia a días, horas, minutos y segundos de la seleccion real madrid
+let segundos_restantes_real_madrid = Math.floor(diferencia_real_madrid / 1000);
+let minutos_restantes_real_madrid = Math.floor(segundos_restantes_real_madrid / 60);
+let horas_restantes_real_madrid = Math.floor(minutos_restantes_real_madrid / 60);
+const dias_restantes_real_madrid = Math.floor(horas_restantes_real_madrid / 24);
 
+horas_restantes_real_madrid %= 24;
+minutos_restantes_real_madrid %= 60;
+segundos_restantes_real_madrid %= 60;
 
-  //Enviar datos de js a html de hbk
-  love.innerText = "HB en:"; // Año de la próxima HB love (es el mismo que el actual)
-  mes_love.innerText = 10 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_love.innerText = dias_restantes_love + " dias";
-  hora_love.innerText = horas_restantes_love + " horas";
-  minuto_love.innerText = minutos_restantes_love + " minutos";
-  segundo_love.innerText = segundos_restantes_love + " segundos";
-
-  //Enviar datos de js a html de party
-  party.innerText = "Village en:"; // Año de la próxima party (es el mismo que el actual)
-  mes_party.innerText = 12 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_party.innerText = dias_restantes_party + " dias";
-  hora_party.innerText = horas_restantes_party + " horas";
-  minuto_party.innerText = minutos_restantes_party + " minutos";
-  segundo_party.innerText = segundos_restantes_party + " segundos";
-
-  //Enviar datos de js a html de graduation
-  graduation.innerText = "Pensum en:"; // Año de la próxima graduation (es el mismo que el actual)
-  mes_graduation.innerText = 11 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_graduation.innerText = dias_restantes_graduation + " dias";
-  hora_graduation.innerText = horas_restantes_graduation + " horas";
-  minuto_graduation.innerText = minutos_restantes_graduation + " minutos";
-  segundo_graduation.innerText = segundos_restantes_graduation + " segundos";
-
-  //Enviar datos de js a html de san valentin
-  san_valentin.innerText = "Amor y amistad en:"; // Año de la próxima graduation (es el mismo que el actual)
-  mes_san_valentin.innerText = 9 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_san_valentin.innerText = dias_restantes_san_valentin + " dias";
-  hora_san_valentin.innerText = horas_restantes_san_valentin + " horas";
-  minuto_san_valentin.innerText = minutos_restantes_san_valentin + " minutos";
-  segundo_san_valentin.innerText = segundos_restantes_san_valentin + " segundos";
-
-  //Enviar datos de js a html de mi cumpleaños
-  bd.innerText = "HB en:"; // Año de la próxima graduation (es el mismo que el actual)
-  mes_bd.innerText = 11 - mes_actual + " meses"; // Diciembre es el mes 12
-  dia_bd.innerText = dias_restantes_bd + " dias";
-  hora_bd.innerText = horas_restantes_bd + " horas";
-  minuto_bd.innerText = minutos_restantes_bd + " minutos";
-  segundo_bd.innerText = segundos_restantes_bd + " segundos";
+    //Enviar datos de js a html de navidad
+    navidad.innerText = "Christmas en:"; // Año de la próxima Navidad (es el mismo que el actual)
+    mes_navidad.innerText = 12 - mes_actual + " " + meses; // Diciembre es el mes 12
+    dia_navidad.innerText = dias_restantes_navidad + " " + dias;
+    hora_navidad.innerText = horas_restantes_navidad + " " + horas;
+    minuto_navidad.innerText = minutos_restantes_navidad + " " + minutos;
+    segundo_navidad.innerText = segundos_restantes_navidad + " " + segundos;
+  
+    //Enviar datos de js a html del nuevo año
+    nuevo.innerText = "New Year en:"; // Año de la próxima Navidad (es el mismo que el actual)
+    mes_nuevo.innerText = 12 - mes_actual + " " + meses; // Diciembre es el mes 12
+    dia_nuevo.innerText = dias_restantes_newyear + " " + dias;
+    hora_nuevo.innerText = horas_restantes_newyear + " " + horas;
+    minuto_nuevo.innerText = minutos_restantes_newyear + " " + minutos;
+    segundo_nuevo.innerText = segundos_restantes_newyear + " " + segundos;
+  
+    //Enviar datos de js a html de halloween
+    halloween.innerText = "Halloween en:"; // Año de la próxima halloween (es el mismo que el actual)
+    mes_halloween.innerText = 10 - mes_actual + " " + meses; // Diciembre es el mes 12
+    dia_halloween.innerText = dias_restantes_halloween + " " + dias;
+    hora_halloween.innerText = horas_restantes_halloween + " " + horas;
+    minuto_halloween.innerText = minutos_restantes_halloween + " " + minutos;
+    segundo_halloween.innerText = segundos_restantes_halloween + " " + segundos;
+  
+  
+    //Enviar datos de js a html de hbk
+    love.innerText = "HB en:"; // Año de la próxima HB love (es el mismo que el actual)
+    mes_love.innerText = 10 - mes_actual + " " + meses; // Diciembre es el mes 12
+    dia_love.innerText = dias_restantes_love + " " + dias;
+    hora_love.innerText = horas_restantes_love + " " + horas;
+    minuto_love.innerText = minutos_restantes_love + " " + minutos;
+    segundo_love.innerText = segundos_restantes_love + " " + segundos;
+  
+    //Enviar datos de js a html de party
+    party.innerText = "Village en:"; // Año de la próxima party (es el mismo que el actual)
+    mes_party.innerText = 12 - mes_actual + " " + meses; // Diciembre es el mes 12
+    dia_party.innerText = dias_restantes_party + " " + dias;
+    hora_party.innerText = horas_restantes_party + " " + horas;
+    minuto_party.innerText = minutos_restantes_party + " " + minutos;
+    segundo_party.innerText = segundos_restantes_party + " " + segundos;
+  
+    //Enviar datos de js a html de graduation
+    graduation.innerText = "Pensum en:"; // Año de la próxima graduation (es el mismo que el actual)
+    mes_graduation.innerText = 11 - mes_actual + " " + meses; // Diciembre es el mes 12
+    dia_graduation.innerText = dias_restantes_graduation + " " + dias;
+    hora_graduation.innerText = horas_restantes_graduation + " " + horas;
+    minuto_graduation.innerText = minutos_restantes_graduation + " " + minutos;
+    segundo_graduation.innerText = segundos_restantes_graduation + " " + segundos;
+  
+    //Enviar datos de js a html de san valentin
+    san_valentin.innerText = "Amor y amistad en:"; // Año de la próxima graduation (es el mismo que el actual)
+    mes_san_valentin.innerText = 9 - mes_actual + " " + meses; // Diciembre es el mes 12
+    dia_san_valentin.innerText = dias_restantes_san_valentin + " " + dias;
+    hora_san_valentin.innerText = horas_restantes_san_valentin + " " + horas;
+    minuto_san_valentin.innerText = minutos_restantes_san_valentin + " " + minutos;
+    segundo_san_valentin.innerText = segundos_restantes_san_valentin + " " + segundos;
+  
+    //Enviar datos de js a html de mi cumpleaños
+    bd.innerText = "HB en:"; // Año de la próxima graduation (es el mismo que el actual)
+    mes_bd.innerText = 11 - mes_actual + " " + meses; // Diciembre es el mes 12
+    dia_bd.innerText = dias_restantes_bd + " " + dias;
+    hora_bd.innerText = horas_restantes_bd + " " + horas;
+    minuto_bd.innerText = minutos_restantes_bd + " " + minutos;
+    segundo_bd.innerText = segundos_restantes_bd + " " + segundos;
+  
+      //Enviar datos de js a html de la seleccion colombia
+      colombia.innerText = "Colombia Vs. Panama en:"; // Año de la próxima graduation (es el mismo que el actual)
+      mes_colombia.innerText = 7 - mes_actual + " " + meses; // Diciembre es el mes 12
+      dia_colombia.innerText = dias_restantes_colombia + " " + dias;
+      hora_colombia.innerText = horas_restantes_colombia + " " + horas;
+      minuto_colombia.innerText = minutos_restantes_colombia + " " + minutos;
+      segundo_colombia.innerText = segundos_restantes_colombia + " " + segundos;
+  
+       //Enviar datos de js a html de la seleccion real madrid
+   real_madrid.innerText = "Real Madrid Vs. Milan en:"; // Año de la próxima graduation (es el mismo que el actual)
+   mes_real_madrid.innerText = 7 - mes_actual + " " + meses; // Diciembre es el mes 12
+   dia_real_madrid.innerText = dias_restantes_real_madrid + " " + dias;
+   hora_real_madrid.innerText = horas_restantes_real_madrid + " " + horas;
+   minuto_real_madrid.innerText = minutos_restantes_real_madrid + " " + minutos;
+   segundo_real_madrid.innerText = segundos_restantes_real_madrid + " " + segundos;
 
   //Mensaje para el dia en que ocurre el evento
   if (mes_actual == 10 && dia_actual == 3) {
@@ -368,7 +433,7 @@ const mostrarFecha = () => {
 const intervalo = setInterval(mostrarFecha, 1000);
 
 //Alertas inteligentes
-
+/*
 document.addEventListener('DOMContentLoaded', function () {
   // Selecciona el contenedor de Navidad
   var containeractual = document.querySelector('.container-actual');
@@ -468,5 +533,30 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
+*/
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Selecciona el contenedor de Año Nuevo
+  var containerAnioNuevo = document.querySelector('.container-anionuevo');
+
+  // Crea un nuevo elemento de audio
+  var audio = new Audio('/Audios/anio_nuevo.mp3');
+
+  // Variable para controlar el estado de reproducción
+  var isPlaying = false;
+
+  // Agrega el EventListener para el clic
+  containerAnioNuevo.addEventListener('click', function () {
+    if (!isPlaying) {
+      // Si no está reproduciendo, inicia la reproducción
+      audio.play();
+      isPlaying = true;
+    } else {
+      // Si está reproduciendo, pausa la reproducción
+      audio.pause();
+      isPlaying = false;
+    }
+  });
+});
 
 
