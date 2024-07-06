@@ -119,7 +119,7 @@ function meses_texto(mes_actual) {
     { indice: 10, mes: "October" },
     { indice: 11, mes: "November" },
     { indice: 12, mes: "December" }
-];
+  ];
 
   let mes_text = "";
 

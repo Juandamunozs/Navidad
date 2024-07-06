@@ -78,7 +78,8 @@ body {
 .container-cancion_animo,
 .container-sobre-mi,
 .container-canciones,
-.container-fechas-importantes{
+.container-fechas-importantes,
+.container-cancion_1 {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
@@ -146,35 +147,41 @@ body {
     /* Color del borde al hacer hover */
 }
 
-.container-cancion_recomendada{
+.container-cancion_recomendada {
     border: 2px solid rgb(10, 13, 187);
     /* Color del borde al hacer hover */
 }
 
-.container-cancion_favorita{
+.container-cancion_favorita {
     border: 2px solid rgb(119, 228, 17);
     /* Color del borde al hacer hover */
 }
 
-.container-cancion_animo{
+.container-cancion_animo {
     border: 2px solid rgb(64, 14, 179);
     /* Color del borde al hacer hover */
 }
 
-.container-sobre-mi{
+.container-sobre-mi {
     border: 2px solid rgb(64, 14, 179);
     /* Color del borde al hacer hover */
 }
 
-.container-canciones{
+.container-canciones {
     border: 2px solid rgb(64, 14, 179);
     /* Color del borde al hacer hover */
 }
 
-.container-fechas-importantes{
+.container-fechas-importantes {
     border: 2px solid rgb(64, 14, 179);
     /* Color del borde al hacer hover */
 }
+
+.container-cancion_1 {
+    border: 2px solid rgb(224, 46, 14);
+    /* Color del borde al hacer hover */
+}
+
 #text_titulo {
     color: #1885df;
 }
@@ -195,7 +202,8 @@ body {
 .container-cancion_animo:hover,
 .container-sobre-mi:hover,
 .container-canciones:hover,
-.container-fechas-importantes:hover {
+.container-fechas-importantes:hover,
+.container-cancion_1:hover {
     border: 2px solid blue;
     /* Color del borde al hacer hover */
     background-color: rgba(0, 0, 255, 0.1);
@@ -221,14 +229,10 @@ body {
     font-weight: bold;
 }
 
-#reproduccion_recomendada:hover {
-    color: white;
-}
-
-#nota, 
+#nota,
 #nota_favorita,
-#nota_animo {
+#nota_animo,
+#nota_1 {
     color: rgb(233, 14, 61);
     font-weight: bold;
 }
-

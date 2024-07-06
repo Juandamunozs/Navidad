@@ -1,6 +1,3 @@
-const reproduccion_favorita = document.getElementById("reproduccion_favorita");
-const reproduccion_recomendada = document.getElementById("reproduccion_recomendada");
-const reproduccion_animo = document.getElementById("reproduccion_animo");
 
 //Evento de audio de cancion recomendada
 document.addEventListener('DOMContentLoaded', function () {
@@ -49,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //Evento de audio de cancion recomendada
 document.addEventListener('DOMContentLoaded', function () {
     // Selecciona el contenedor de la canción recomendada
-    var containerFavorita= document.querySelector('.container-cancion_favorita');
+    var containerFavorita = document.querySelector('.container-cancion_favorita');
 
     // Crea un nuevo elemento de audio
     var audio = new Audio('/Audios/cancion_favorita.mp3');
@@ -93,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //Evento de audio de cancion animo
 document.addEventListener('DOMContentLoaded', function () {
     // Selecciona el contenedor de la canción recomendada
-    var containerAnimo= document.querySelector('.container-cancion_animo');
+    var containerAnimo = document.querySelector('.container-cancion_animo');
 
     // Crea un nuevo elemento de audio
     var audio = new Audio('/Audios/cancion_animo.mp3');
@@ -128,6 +125,50 @@ document.addEventListener('DOMContentLoaded', function () {
         isPlaying = false; // Marca como no reproduciendo
         estado_reproduccion = "▶️"; // Cambia el estado a "▶️"
         reproduccion_animo.innerText = estado_reproduccion; // Actualiza el texto del botón
+
+        // Reinicia la reproducción al finalizar
+        audio.currentTime = 0; // Reinicia al inicio
+    });
+});
+
+//Evento de audio de cancion 1
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona el contenedor de la canción recomendada
+    var container_cancion_1 = document.querySelector('.container-cancion_1');
+
+    // Crea un nuevo elemento de audio
+    var audio = new Audio('/Audios/cancion_1.mp3');
+
+    // Variable para controlar el estado de reproducción
+    var isPlaying = false;
+
+    // Obtén referencia al elemento donde se mostrará el estado de reproducción
+    var reproduccion_cancion_1 = document.getElementById('reproduccion_1');
+
+    // Agrega el EventListener para el clic
+    container_cancion_1.addEventListener('click', function () {
+        let estado_reproduccion = "";
+        if (!isPlaying) {
+            // Si no está reproduciendo, inicia la reproducción
+            audio.play();
+            isPlaying = true;
+            estado_reproduccion = "⏸️";
+        } else {
+            // Si está reproduciendo, pausa la reproducción
+            audio.pause();
+            isPlaying = false;
+            estado_reproduccion = "▶️";
+        }
+
+        // Actualiza el texto del elemento reproduccion_recomendada
+        reproduccion_cancion_1.innerText = estado_reproduccion;
+    });
+
+    // Agrega el evento 'ended' al audio para detectar cuando termine la reproducción
+    audio.addEventListener('ended', function () {
+        isPlaying = false; // Marca como no reproduciendo
+        estado_reproduccion = "▶️"; // Cambia el estado a "▶️"
+        reproduccion_cancion_1.innerText = estado_reproduccion; // Actualiza el texto del botón
 
         // Reinicia la reproducción al finalizar
         audio.currentTime = 0; // Reinicia al inicio
