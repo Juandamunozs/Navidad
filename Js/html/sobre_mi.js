@@ -47,7 +47,7 @@ const sobre_mi = () => {
 
   
   //Enviar datos de js a html de graduation
-  graduation.innerText = "Pensum in:"; // Año de la próxima graduation (es el mismo que el actual)
+  graduation.innerText = "I graduate in:"; // Año de la próxima graduation (es el mismo que el actual)
   mes_graduation.innerText = 11 - mes_actual + " " + meses; // Diciembre es el mes 12
   dia_graduation.innerText = dias_restantes_graduation + " " + dias;
   hora_graduation.innerText = horas_restantes_graduation + " " + horas;
