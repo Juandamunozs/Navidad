@@ -55,7 +55,7 @@ const actualiza = () => {
   const nombre_autor_1_cos = "Anuel AA & Ozuna";
   const fecha_lanzamiento_1_cos = "2017";
   const genero_1_cos = "Hip Hop - Pop";
-  const nota_1_cos = "Me refuerda a ti 👩‍❤️‍👨";
+  const nota_1_cos = "Me recuerda a ti 👩‍❤️‍👨";
 
 
   //Enviar datos de js a html de la cancion recomendada
