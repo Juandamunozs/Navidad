@@ -29,6 +29,13 @@ const fecha_de_lanzamiento_favorita = document.getElementById("fecha_lanzamiento
 const genero_cancion_favorita = document.getElementById("genero_favorita");
 const nota_cancion_favorita = document.getElementById("nota_favorita");
 
+//Recibir datos de la cancion favorita de html a js
+const cancion_animo = document.getElementById("cancion_animo");
+const nombre_del_autor_animo = document.getElementById("nombre_animo");
+const fecha_de_lanzamiento_animo = document.getElementById("fecha_lanzamiento_animo");
+const genero_cancion_animo = document.getElementById("genero_animo");
+const nota_cancion_animo = document.getElementById("nota_animo");
+
 //Recibir datos de fecha actual de html a js
 const anio = document.getElementById("anio");
 const mes = document.getElementById("mes");
@@ -216,6 +223,13 @@ const mostrarFecha = () => {
     const fecha_lanzamiento_favorita_cos = "2022";
     const genero_favorita_cos = "Pop";
     const nota_favorita_cos = "Cancion Favorita ✨";
+
+      //Datos sobre la cancion de mi sentido de animo
+      const nombre_cancion_animo_cos = "Querer querernos";
+      const nombre_autor_animo_cos = "Canserbero";
+      const fecha_lanzamiento_animo_cos = "2011";
+      const genero_animo_cos = "Hip Hop";
+      const nota_animo_cos = "Mi vida suena esta sonando asi 🍃";
 
   //Fechas de destino o donde ocurre el evento
   const fecha_actual = new Date();
@@ -460,6 +474,13 @@ const mostrarFecha = () => {
   fecha_de_lanzamiento_favorita.innerText = fecha_lanzamiento_favorita_cos;
   genero_cancion_favorita.innerText = genero_favorita_cos;
   nota_cancion_favorita.innerText = nota_favorita_cos;
+
+    //Enviar datos de js a html de la cancion como me siento
+    cancion_animo.innerText = nombre_cancion_animo_cos;
+    nombre_del_autor_animo.innerText = nombre_autor_animo_cos;
+    fecha_de_lanzamiento_animo.innerText = fecha_lanzamiento_animo_cos;
+    genero_cancion_animo.innerText = genero_animo_cos;
+    nota_cancion_animo.innerText = nota_animo_cos;
 
   // Calcular años, meses, días, horas, minutos y segundos por consola
   let segundos_totales_born = Math.floor(diferencia_ms / 1000);
