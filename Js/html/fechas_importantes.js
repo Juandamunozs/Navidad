@@ -63,14 +63,6 @@ const hora_party = document.getElementById("hora_party");
 const minuto_party = document.getElementById("minuto_party");
 const segundo_party = document.getElementById("segundo_party");
 
-//Recibir datos de graduación de html a js
-const graduation = document.getElementById("graduation");
-const mes_graduation = document.getElementById("mes_graduation");
-const dia_graduation = document.getElementById("dia_graduation");
-const hora_graduation = document.getElementById("hora_graduation");
-const minuto_graduation = document.getElementById("minuto_graduation");
-const segundo_graduation = document.getElementById("segundo_graduation");
-
 //Recibir datos de san valentin de html a js
 const san_valentin = document.getElementById("san_valentin");
 const mes_san_valentin = document.getElementById("mes_san_valentin");
@@ -198,7 +190,6 @@ const mostrarFecha = () => {
   const fecha_party = new Date(fecha_actual.getFullYear() + 1, 0, 2); // 2 de enero del año 2025
   const fecha_love = new Date(fecha_actual.getFullYear(), 9, 4); // 4 de octubre del año actual
   const born = new Date(2024, 6, 3, 16, 23); // 3 de julio del año 2024 a las 16:23
-  const fecha_graduation = new Date(fecha_actual.getFullYear(), 10, 20); // 20 de noviembre del año actual
   const fecha_bd = new Date(fecha_actual.getFullYear(), 10, 5); // 5 de noviembre del año actual
   const fecha_colombia = new Date(2024, 6, 6, 17, 0); // 6 de julio a las 5 pm del año actual
   const fecha_real_madrid = new Date(2024, 6, 31, 19, 30); // 6 de julio a las 5 pm del año actual
@@ -230,7 +221,6 @@ const mostrarFecha = () => {
   const diferencia_love = fecha_love - fecha_actual;
   const diferencia_party = fecha_party - fecha_actual;
   const diferencia_ms = fecha_actual - born;
-  const diferencia_graduation = fecha_graduation - fecha_actual;
   const diferencia_san_valentin = fecha_valentin - fecha_actual;
   const diferencia_bd = fecha_bd - fecha_actual;
   const diferencia_colombia = fecha_colombia - fecha_actual;
@@ -247,16 +237,6 @@ const mostrarFecha = () => {
   horas_restantes_navidad %= 24;
   minutos_restantes_navidad %= 60;
   segundos_restantes_navidad %= 60;
-
-  // Convirtiendo la diferencia a días, horas, minutos y segundos de graduacion
-  let segundos_restantes_graduation = Math.floor(diferencia_graduation / 1000);
-  let minutos_restantes_graduation = Math.floor(segundos_restantes_graduation / 60);
-  let horas_restantes_graduation = Math.floor(minutos_restantes_graduation / 60);
-  const dias_restantes_graduation = Math.floor(horas_restantes_graduation / 24);
-
-  horas_restantes_graduation %= 24;
-  minutos_restantes_graduation %= 60;
-  segundos_restantes_graduation %= 60;
 
   // Convirtiendo la diferencia a días, horas, minutos y segundos de nuevo año
   let segundos_restantes_newyear = Math.floor(diferencia_newyear / 1000);
@@ -378,14 +358,6 @@ const mostrarFecha = () => {
   hora_party.innerText = horas_restantes_party + " " + horas;
   minuto_party.innerText = minutos_restantes_party + " " + minutos;
   segundo_party.innerText = segundos_restantes_party + " " + segundos;
-
-  //Enviar datos de js a html de graduation
-  graduation.innerText = "Pensum in:"; // Año de la próxima graduation (es el mismo que el actual)
-  mes_graduation.innerText = 11 - mes_actual + " " + meses; // Diciembre es el mes 12
-  dia_graduation.innerText = dias_restantes_graduation + " " + dias;
-  hora_graduation.innerText = horas_restantes_graduation + " " + horas;
-  minuto_graduation.innerText = minutos_restantes_graduation + " " + minutos;
-  segundo_graduation.innerText = segundos_restantes_graduation + " " + segundos;
 
   //Enviar datos de js a html de san valentin
   san_valentin.innerText = "Friendship Day in:"; // Año de la próxima graduation (es el mismo que el actual)
